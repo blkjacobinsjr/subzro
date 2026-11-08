@@ -27,7 +27,7 @@ text coverage, weights, styles, or shaping features. Run `npm run build` from
 `frontend`, then repeat the homepage and mixed-script pixel comparisons after
 every regeneration. The script does not prove visual equivalence.
 
-The HTML preloads the four normal core files only for a direct load of `/`.
+The HTML preloads the normal 400, 500, and 600 core files only for a direct load of `/`. Weight 700 loads through CSS if needed.
 Client-side navigation to `/` still loads the needed font through CSS. A signed-in
 redirect from `/` may make those preloads unnecessary; verify that route when
 integrating the change.

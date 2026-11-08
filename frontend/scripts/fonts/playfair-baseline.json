@@ -1,0 +1,226 @@
+{
+  "captured": "2026-11-08",
+  "note": "Chrome 156 Google Fonts global Playfair Display WOFF2 sources; the current site still uses these original faces. Italic 600 is static; normal 500 and 700 share variable source files. Byte counts are file sizes, not per-page transfers.",
+  "source_faces": [
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXt7A-X-uE0qEE5Do.woff2",
+      "bytes": 5948,
+      "sha256": "6499cb8c7bc7de559b53b7adaebe26503e89909595375a8112240df77b3dbc6c",
+      "glyphs": 144,
+      "unicode_codepoints": 115,
+      "axes": [],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXtHA-X-uE0qEEw.woff2",
+      "bytes": 23228,
+      "sha256": "3308a003869d086a903e23666a6080399dab9e34964d073bfce8c85cc076c815",
+      "glyphs": 312,
+      "unicode_codepoints": 229,
+      "axes": [],
+      "features": {
+        "GSUB": [
+          "calt",
+          "ccmp",
+          "dnom",
+          "frac",
+          "liga",
+          "lnum",
+          "locl",
+          "numr",
+          "rlig"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXtXA-X-uE0qEE5Do.woff2",
+      "bytes": 13528,
+      "sha256": "584696e36d8d4d54a2a10a420664b344daa5c99980b7eae925efc547a6c3d800",
+      "glyphs": 150,
+      "unicode_codepoints": 109,
+      "axes": [],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXt_A-X-uE0qEE5Do.woff2",
+      "bytes": 14156,
+      "sha256": "51afa7a1710147cbeea891cb20a4d82be2095f0c46196eb7c0db43281328001a",
+      "glyphs": 271,
+      "unicode_codepoints": 190,
+      "axes": [],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "liga",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2",
+      "bytes": 20980,
+      "sha256": "5628567856d60d714e7a35bcac9e3de08b336d63b12138f61b970990a1ee9547",
+      "glyphs": 271,
+      "unicode_codepoints": 190,
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "liga",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2",
+      "bytes": 9056,
+      "sha256": "8fa67d5f0ab2a1d0b924729a0411a069b384d7a236edd96a6767ef342a6d048f",
+      "glyphs": 143,
+      "unicode_codepoints": 115,
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2",
+      "bytes": 21144,
+      "sha256": "d7f9db9b1034978ebebdf7312aa4aee55dff3ef6039e7ff71413780bd4a05558",
+      "glyphs": 143,
+      "unicode_codepoints": 109,
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "features": {
+        "GSUB": [
+          "ccmp",
+          "locl"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2",
+      "bytes": 38460,
+      "sha256": "5d91eb5d522a03081946c44c8ca17c902230dfed5f0f9b5014262135d47b15b2",
+      "glyphs": 318,
+      "unicode_codepoints": 229,
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "features": {
+        "GSUB": [
+          "calt",
+          "ccmp",
+          "dnom",
+          "frac",
+          "liga",
+          "lnum",
+          "locl",
+          "numr",
+          "rlig"
+        ],
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ]
+      },
+      "hint_tables": [
+        "gasp"
+      ]
+    }
+  ]
+}

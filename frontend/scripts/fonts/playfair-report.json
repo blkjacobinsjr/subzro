@@ -1,0 +1,92 @@
+{
+  "faces": [
+    {
+      "axes": [],
+      "bytes": 21212,
+      "codepoints": 229,
+      "features": {
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ],
+        "GSUB": [
+          "calt",
+          "ccmp",
+          "liga",
+          "locl",
+          "rlig"
+        ]
+      },
+      "file": "public/fonts/playfair/playfair-italic-600-latin.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 284,
+      "head": {
+        "created": 3592311671,
+        "modified": 3715862706,
+        "xMax": 1146,
+        "xMin": -371,
+        "yMax": 975,
+        "yMin": -195
+      },
+      "hint_tables": [
+        "gasp"
+      ],
+      "sha256": "660c1fda6fb8521e87af8027ac974c0bd6a46cd264ab189be070e0823b00d174",
+      "source_bytes": 23228,
+      "source_codepoints": 229,
+      "source_file": "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXtHA-X-uE0qEEw.woff2",
+      "source_glyphs": 312,
+      "style": "italic",
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00B4, U+00B6-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2032-2033, U+2039-203A, U+2044, U+20AC, U+2122, U+2191, U+2193, U+2212",
+      "weight": "600"
+    }
+  ],
+  "feature_profile": "default",
+  "hint_profile": "drop",
+  "hinting_note": "The drop profile removes glyph hint instructions. The source has none; gasp is retained as rendering policy.",
+  "ofl_sha256": "566be814f8e96e93dfa16101331557eb6b5467e9e03f627c0910fe93ca12300e",
+  "reserved_font_names": [
+    "Playfair Display"
+  ],
+  "source_css_sha256": "0921b0c399a898df8588efc883135ec1e41d43ce621ccc18b48265e6f1fc22cb",
+  "source_faces": {
+    "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_naUXtHA-X-uE0qEEw.woff2": {
+      "axes": [],
+      "bytes": 23228,
+      "codepoints": 229,
+      "features": {
+        "GPOS": [
+          "kern",
+          "mark",
+          "mkmk"
+        ],
+        "GSUB": [
+          "calt",
+          "ccmp",
+          "dnom",
+          "frac",
+          "liga",
+          "lnum",
+          "locl",
+          "numr",
+          "rlig"
+        ]
+      },
+      "glyph_instruction_bytes": 0,
+      "glyphs": 312,
+      "head": {
+        "created": 3592311671,
+        "modified": 3715862706,
+        "xMax": 1146,
+        "xMin": -371,
+        "yMax": 975,
+        "yMin": -195
+      },
+      "hint_tables": [
+        "gasp"
+      ],
+      "sha256": "3308a003869d086a903e23666a6080399dab9e34964d073bfce8c85cc076c815"
+    }
+  }
+}
