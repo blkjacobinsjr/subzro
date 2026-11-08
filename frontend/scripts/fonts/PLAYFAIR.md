@@ -30,3 +30,7 @@ fixture but increased the font by 60 bytes, so the generator keeps it.
 Regenerate after changing the source font/CSS, Playfair usage, text coverage,
 weight, style, or font features. Then run `npm run build` from `frontend` and
 repeat the component pixel and font-transfer checks.
+
+The generated Playfair face is not currently enabled: mixed text caused the browser
+to fetch both it and the original Latin face. Re-enable only after verifying that
+font transfers and rendering are no worse for mixed-script text.

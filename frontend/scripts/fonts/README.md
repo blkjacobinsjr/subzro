@@ -4,19 +4,19 @@ The generator uses the checked-in Google Fonts CSS and WOFF2 files in `source/`.
 It does not download files and does not run as part of the frontend build.
 
 From the repository root, install the pinned Python dependency and generate the
-selected ASCII/common-punctuation profile:
+safe full-Latin profile:
 
 ```sh
 cd frontend
 python3 -m venv .venv-fonts
 . .venv-fonts/bin/activate
 python -m pip install -r scripts/fonts/requirements.txt
-python scripts/fonts/subset_poppins.py --core-profile ascii-punctuation
+python scripts/fonts/subset_poppins.py
 ```
 
-Use `--core-profile google-latin` to generate the full Google Latin subset as a
-diagnostic alternative. The selected ASCII profile merges the original Latin
-and Latin-ext sources into one extended subset.
+The ASCII profile is experimental: it caused repeatable pixel differences in
+accented text and is not enabled on the site. The site keeps the original
+Google Poppins faces. Re-enable generated faces only after fresh pixel checks.
 
 The generator rewrites `public/fonts/poppins/`, `src/fonts/poppins.generated.css`,
 and `scripts/fonts/poppins-report.json`. The captured Google CSS was requested
@@ -31,3 +31,7 @@ The HTML preloads the normal 400, 500, and 600 core files only for a direct load
 Client-side navigation to `/` still loads the needed font through CSS. A signed-in
 redirect from `/` may make those preloads unnecessary; verify that route when
 integrating the change.
+
+The root-only preload uses the original Google Poppins URLs in `public/font-preload.js`.
+After updating the Google Fonts source or stylesheet, check that all three URLs still
+match the stylesheet for supported browsers before updating the preload.

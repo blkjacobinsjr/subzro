@@ -153,7 +153,7 @@ def subset_font(font: TTFont, codepoints: set[int], output: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--core-profile", choices=("google-latin", "ascii-punctuation"), default="ascii-punctuation")
+    parser.add_argument("--core-profile", choices=("google-latin", "ascii-punctuation"), default="google-latin")
     args = parser.parse_args()
     sources, source_ranges = parse_faces()
     shutil.rmtree(OUTPUT_DIR, ignore_errors=True)

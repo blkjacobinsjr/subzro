@@ -45,14 +45,14 @@
     },
     {
       "axes": [],
-      "bytes": 8428,
+      "bytes": 5504,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
-      "file": "public/fonts/poppins/poppins-normal-400-extended.woff2",
+      "file": "public/fonts/poppins/poppins-normal-400-latin-ext.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 299,
+      "glyphs": 175,
       "head": {
         "created": 3634670014,
         "modified": 3675666124,
@@ -62,23 +62,23 @@
         "yMin": -572
       },
       "hint_tables": [],
-      "sha256": "62a6e1a26d830e30ea680e6b339af80ce02ee09fb80839f4014c3a07223eea92",
+      "sha256": "6443c0e866cf15b160473290377ad922b4deb88570c371ef74bd47a390246618",
       "style": "normal",
-      "subset": "extended",
-      "unicode_codepoints": 238,
-      "unicode_range": "U+0000, U+000D, U+00A0-00A8, U+00AA-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02DA, U+02DC-02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113, U+2212, U+2215",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
       "weight": 400
     },
     {
       "axes": [],
-      "bytes": 5028,
+      "bytes": 7872,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
       "file": "public/fonts/poppins/poppins-normal-400-core.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 113,
+      "glyphs": 218,
       "head": {
         "created": 3634670014,
         "modified": 3675666124,
@@ -88,11 +88,11 @@
         "yMin": -572
       },
       "hint_tables": [],
-      "sha256": "cf97170a8d55e8ef9099a080d816fded70343dbf32ed75e7aaf410cb239529cf",
+      "sha256": "3cbeb26a72130d838fd7e72b7f4be6de6e4262194541ce385d74456e4010ff47",
       "style": "normal",
       "subset": "core",
-      "unicode_codepoints": 111,
-      "unicode_range": "U+0020-007E, U+00A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
       "weight": 400
     },
     {
@@ -139,14 +139,14 @@
     },
     {
       "axes": [],
-      "bytes": 8288,
+      "bytes": 5404,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
-      "file": "public/fonts/poppins/poppins-normal-500-extended.woff2",
+      "file": "public/fonts/poppins/poppins-normal-500-latin-ext.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 299,
+      "glyphs": 175,
       "head": {
         "created": 3634670018,
         "modified": 3675666124,
@@ -156,23 +156,23 @@
         "yMin": -582
       },
       "hint_tables": [],
-      "sha256": "7bbb4e54fe362d97f6020c53ecbad2ab4c74ad8d084b7055617e7d8c077d09a0",
+      "sha256": "3add7f9e805d25f94b38b2ed574aae30827011b3ce366ad84d129530a48e939b",
       "style": "normal",
-      "subset": "extended",
-      "unicode_codepoints": 238,
-      "unicode_range": "U+0000, U+000D, U+00A0-00A8, U+00AA-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02DA, U+02DC-02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113, U+2212, U+2215",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
       "weight": 500
     },
     {
       "axes": [],
-      "bytes": 4992,
+      "bytes": 7748,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
       "file": "public/fonts/poppins/poppins-normal-500-core.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 113,
+      "glyphs": 218,
       "head": {
         "created": 3634670018,
         "modified": 3675666124,
@@ -182,11 +182,11 @@
         "yMin": -582
       },
       "hint_tables": [],
-      "sha256": "0eec669e3d6c345ce47deaa41dfba383c0b9a99237ad7a98d81bb7b6f6b27438",
+      "sha256": "780383d51824218463e58c48265ace80bda36ff74b5913c171aea2c7e21920c6",
       "style": "normal",
       "subset": "core",
-      "unicode_codepoints": 111,
-      "unicode_range": "U+0020-007E, U+00A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
       "weight": 500
     },
     {
@@ -233,14 +233,14 @@
     },
     {
       "axes": [],
-      "bytes": 8344,
+      "bytes": 5492,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
-      "file": "public/fonts/poppins/poppins-normal-600-extended.woff2",
+      "file": "public/fonts/poppins/poppins-normal-600-latin-ext.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 299,
+      "glyphs": 175,
       "head": {
         "created": 3634670021,
         "modified": 3675666125,
@@ -250,23 +250,23 @@
         "yMin": -593
       },
       "hint_tables": [],
-      "sha256": "82aee61a1da77020e4aa8d60dad7dc69ff4774614c36ac0ccd27e40ec1522e82",
+      "sha256": "a3ca891046ee4be8d3b0c9efd7aae0abef3d9e9e67279effec9aeb3a91d29982",
       "style": "normal",
-      "subset": "extended",
-      "unicode_codepoints": 238,
-      "unicode_range": "U+0000, U+000D, U+00A0-00A8, U+00AA-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02DA, U+02DC-02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113, U+2212, U+2215",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
       "weight": 600
     },
     {
       "axes": [],
-      "bytes": 5116,
+      "bytes": 7972,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
       "file": "public/fonts/poppins/poppins-normal-600-core.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 113,
+      "glyphs": 218,
       "head": {
         "created": 3634670021,
         "modified": 3675666125,
@@ -276,11 +276,11 @@
         "yMin": -593
       },
       "hint_tables": [],
-      "sha256": "ef422d27f01e6e2c1ac09e434753c22960b802b8e91eaad0e5fea68a070d14df",
+      "sha256": "e3ee6e842caf45b6512695ca1003f57bc21f2860dd69249d4bc4a09dd5b14be3",
       "style": "normal",
       "subset": "core",
-      "unicode_codepoints": 111,
-      "unicode_range": "U+0020-007E, U+00A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
       "weight": 600
     },
     {
@@ -327,14 +327,14 @@
     },
     {
       "axes": [],
-      "bytes": 8216,
+      "bytes": 5368,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
-      "file": "public/fonts/poppins/poppins-normal-700-extended.woff2",
+      "file": "public/fonts/poppins/poppins-normal-700-latin-ext.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 299,
+      "glyphs": 175,
       "head": {
         "created": 3634670024,
         "modified": 3675666121,
@@ -344,23 +344,23 @@
         "yMin": -606
       },
       "hint_tables": [],
-      "sha256": "dec85d9d81a7b010d95c2308c5ab2640620bb2631c87d4c4d4387c7754c6534a",
+      "sha256": "8e92c16c897d7bfb97d98b2ce98d704ecf811877403e614834464c90d96ea246",
       "style": "normal",
-      "subset": "extended",
-      "unicode_codepoints": 238,
-      "unicode_range": "U+0000, U+000D, U+00A0-00A8, U+00AA-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02DA, U+02DC-02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113, U+2212, U+2215",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
       "weight": 700
     },
     {
       "axes": [],
-      "bytes": 5036,
+      "bytes": 7848,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
       "file": "public/fonts/poppins/poppins-normal-700-core.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 113,
+      "glyphs": 218,
       "head": {
         "created": 3634670024,
         "modified": 3675666121,
@@ -370,11 +370,11 @@
         "yMin": -606
       },
       "hint_tables": [],
-      "sha256": "6be1f4d2609f1014af893f034ca60500ccd66f99b090b29956a642088a6ac0ea",
+      "sha256": "ee47165b7eab13b52fbcac2310fcc6fb97958d597ca9d2e196804b40acf47ad0",
       "style": "normal",
       "subset": "core",
-      "unicode_codepoints": 111,
-      "unicode_range": "U+0020-007E, U+00A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
       "weight": 700
     },
     {
@@ -421,14 +421,14 @@
     },
     {
       "axes": [],
-      "bytes": 9076,
+      "bytes": 5916,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
-      "file": "public/fonts/poppins/poppins-italic-600-extended.woff2",
+      "file": "public/fonts/poppins/poppins-italic-600-latin-ext.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 299,
+      "glyphs": 175,
       "head": {
         "created": 3634671186,
         "modified": 3675666125,
@@ -438,23 +438,23 @@
         "yMin": -593
       },
       "hint_tables": [],
-      "sha256": "f2d19138dcb288a53d1ee47a543e1cbf1c229338fe3529c972f9122dfe43d4fe",
+      "sha256": "3391cd313605251cb31f0120521bdf9162f3bdadc98b0196510bd723887fbaf3",
       "style": "italic",
-      "subset": "extended",
-      "unicode_codepoints": 238,
-      "unicode_range": "U+0000, U+000D, U+00A0-00A8, U+00AA-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02DA, U+02DC-02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113, U+2212, U+2215",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
       "weight": 600
     },
     {
       "axes": [],
-      "bytes": 5588,
+      "bytes": 8700,
       "features": {
         "GPOS": [],
         "GSUB": []
       },
       "file": "public/fonts/poppins/poppins-italic-600-core.woff2",
       "glyph_instruction_bytes": 0,
-      "glyphs": 113,
+      "glyphs": 218,
       "head": {
         "created": 3634671186,
         "modified": 3675666125,
@@ -464,15 +464,15 @@
         "yMin": -593
       },
       "hint_tables": [],
-      "sha256": "857757daed99569043949f3fddc67cd7d27eba982d2e30f1b5a461c5a7758e2d",
+      "sha256": "bf66de30d1753057e5bd5ac9870281255ba00165ac658821eac8c3bf3657c587",
       "style": "italic",
       "subset": "core",
-      "unicode_codepoints": 111,
-      "unicode_range": "U+0020-007E, U+00A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
       "weight": 600
     }
   ],
-  "profile": "ascii-punctuation",
+  "profile": "google-latin",
   "reserved_font_names": [],
   "source_css_sha256": "0921b0c399a898df8588efc883135ec1e41d43ce621ccc18b48265e6f1fc22cb",
   "source_faces": {
