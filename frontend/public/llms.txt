@@ -1,0 +1,25 @@
+# Subzro
+
+> Zero in on what matters. Subscription intelligence without a bank link.
+
+Add recurring charges (PDF, CSV, Excel, or manual entry; no bank connection), see monthly spend, rate usage (Often / Sometimes / Rarely), and decide what to keep or cancel.
+
+Site: https://subzro.vercel.app
+
+## Public pages
+
+- [Subzro](https://subzro.vercel.app/index.md): HTML at https://subzro.vercel.app/
+- [Pricing](https://subzro.vercel.app/pricing.md): HTML at https://subzro.vercel.app/pricing
+- [Privacy Policy](https://subzro.vercel.app/privacy.md): HTML at https://subzro.vercel.app/privacy
+- [Terms of Service](https://subzro.vercel.app/terms.md): HTML at https://subzro.vercel.app/terms
+- [Imprint](https://subzro.vercel.app/impressum.md): HTML at https://subzro.vercel.app/impressum
+- [Refund and Withdrawal Policy](https://subzro.vercel.app/refund.md): HTML at https://subzro.vercel.app/refund
+
+## Notes
+
+- Use the .md URLs for a cheap, noindex markdown twin of each public HTML page.
+- You can also send Accept: text/markdown to the HTML routes, or GET /api/md/<path>.
+- /dashboard, /login, /signup, and /onboarding are private or account flows and have no markdown twins.
+- Catalog: https://subzro.vercel.app/api/md/_catalog
+- Full dump: https://subzro.vercel.app/llms-full.txt
+- Usage: https://subzro.vercel.app/ai.txt

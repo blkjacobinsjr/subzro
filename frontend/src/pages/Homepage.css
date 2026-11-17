@@ -13,7 +13,8 @@
   overflow-x: clip;
   color: var(--home-ink);
   background: var(--home-page);
-  font-family: "Poppins", sans-serif;
+  font-family: "Allo Variable Friendly", "Allo", system-ui, sans-serif;
+  font-optical-sizing: auto;
   font-size: var(--home-type-body);
   line-height: 1.5;
 }

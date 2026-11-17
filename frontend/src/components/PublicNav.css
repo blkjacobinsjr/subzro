@@ -10,7 +10,7 @@
   flex: none;
   align-self: stretch;
   color: var(--home-ink);
-  font: 400 16px/1.5 "Poppins", sans-serif;
+  font: 400 16px/1.5 "Allo Variable Friendly", "Allo", system-ui, sans-serif;
   position: sticky;
   z-index: 50;
   top: 0;

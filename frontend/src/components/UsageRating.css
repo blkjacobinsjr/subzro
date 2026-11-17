@@ -14,7 +14,7 @@
 .usage-rating__number {
   display: inline-block;
   color: #8f74bf;
-  font-family: "Poppins", sans-serif;
+  font-family: "Allo Variable Friendly", "Allo", system-ui, sans-serif;
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.045em;

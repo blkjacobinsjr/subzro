@@ -134,7 +134,7 @@ function UsageScene({ paused, onComplete }) {
       fidelity="realistic"
       accent="#7658a8"
       tokens={{
-        "--ss-font": 'var(--usage-demo-font, "Subzro Demo Poppins", sans-serif)',
+        "--ss-font": 'var(--usage-demo-font, "Allo Variable Friendly", "Allo", system-ui, sans-serif)',
         "--ss-canvas": "#eee9f6",
         "--ss-text": "#292630",
         "--ss-muted": "#716c7b",
@@ -234,9 +234,9 @@ export default function UsageDemo() {
     const prepareFonts = async () => {
       try {
         const faces = await Promise.all([
-          document.fonts.load('400 14px "Subzro Demo Poppins"', FONT_SAMPLE),
-          document.fonts.load('500 14px "Subzro Demo Poppins"', FONT_SAMPLE),
-          document.fonts.load('600 20px "Subzro Demo Poppins"', FONT_SAMPLE),
+          document.fonts.load('400 14px "Allo Variable Friendly"', FONT_SAMPLE),
+          document.fonts.load('500 14px "Allo Variable Friendly"', FONT_SAMPLE),
+          document.fonts.load('600 20px "Allo Variable Friendly"', FONT_SAMPLE),
         ]);
         if (faces.some((loaded) => loaded.length === 0)) {
           settle("fallback");
@@ -275,7 +275,7 @@ export default function UsageDemo() {
     <div
       className="usage-demo-shell"
       data-font-status={fontStatus}
-      style={{ "--usage-demo-font": fontStatus === "fallback" ? "system-ui, sans-serif" : '"Subzro Demo Poppins", sans-serif' }}
+      style={{ "--usage-demo-font": fontStatus === "fallback" ? "system-ui, sans-serif" : '"Allo Variable Friendly", "Allo", system-ui, sans-serif' }}
     >
       <div className="usage-demo-shell__caption">
         <span>Illustrative scene</span>

@@ -1,7 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root {
+  font-family: "Allo Variable Friendly", "Allo", system-ui, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.tabular,
+[data-currency],
+.usage-demo__rating-number,
+.usage-rating__number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss02" 1;
+}
+
 
 @layer base {
   * {

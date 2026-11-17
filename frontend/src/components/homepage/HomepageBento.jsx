@@ -63,7 +63,7 @@ function CategoryList() {
       accent="#7665b2"
       ground={["#f5effd", "#eaf7f1"]}
       className="home-bento__stage"
-      tokens={{ "--ss-font": '"Poppins", sans-serif' }}
+      tokens={{ "--ss-font": '"Allo Variable Friendly", "Allo", system-ui, sans-serif' }}
     >
       {() => (
         <Card className="home-bento__ui-card" pad="large" gap={12}>

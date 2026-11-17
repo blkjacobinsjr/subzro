@@ -212,7 +212,7 @@ export default function ControlHero({
             <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 dark:text-white/42">
               {current.eyebrow}
             </div>
-            <div className="mt-3 text-[3.1rem] font-semibold leading-[0.92] tracking-[-0.07em] text-slate-950 dark:text-white">
+            <div className="tabular mt-3 text-[3.1rem] font-semibold leading-[0.92] tracking-[-0.07em] text-slate-950 dark:text-white">
               {formatMoney(current.value)}
             </div>
             <div className={`mt-2 text-sm font-semibold ${modeStyle.accent}`}>

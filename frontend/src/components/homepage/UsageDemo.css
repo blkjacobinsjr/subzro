@@ -1,25 +1,9 @@
 @font-face {
-  font-family: "Subzro Demo Poppins";
+  font-family: "Allo Variable Friendly";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
   font-display: swap;
-  src: url("/fonts/poppins/poppins-normal-400-core.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Subzro Demo Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/poppins/poppins-normal-500-core.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Subzro Demo Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/poppins/poppins-normal-600-core.woff2") format("woff2");
+  src: url("/fonts/allo/AlloVariableFriendly.woff2") format("woff2");
 }
 
 .usage-demo-shell {
@@ -182,7 +166,7 @@
 .usage-demo__app {
   min-height: 100%;
   background: #f7f4fa;
-  font-family: var(--usage-demo-font, "Subzro Demo Poppins", sans-serif);
+  font-family: var(--usage-demo-font, "Allo Variable Friendly", "Allo", system-ui, sans-serif, sans-serif);
 }
 
 .usage-demo__app-header {
@@ -244,7 +228,7 @@
 }
 
 .usage-demo__subscription-list {
-  font-family: var(--usage-demo-font, "Subzro Demo Poppins", sans-serif);
+  font-family: var(--usage-demo-font, "Allo Variable Friendly", "Allo", system-ui, sans-serif, sans-serif);
 }
 
 .usage-demo__subscription-row {

@@ -214,7 +214,7 @@ export default function PricingPage() {
               <div className="relative w-full rounded-[16px] bg-black/[0.025] border border-black/[0.04] p-2.5 pb-2 shadow-inner">
                 <div className="mb-[18px]">
                   <p className="text-[8.5px] font-bold tracking-[0.06em] uppercase text-black/40 mb-[-2px]">Monthly Spends</p>
-                  <div className="flex items-baseline gap-[1px]">
+                  <div className="tabular flex items-baseline gap-[1px]" data-currency="usd">
                     <span className="text-[22px] font-bold text-black/85 tracking-tighter leading-none">$239</span><span className="text-[11px] font-bold text-black/40">.00</span>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function PricingPage() {
 
                 <div className="mb-[18px]">
                   <p className="text-[8.5px] font-bold tracking-[0.06em] uppercase text-black/40 mb-[-2px]">Monthly Spends</p>
-                  <div className="flex items-baseline gap-[1px]">
+                  <div className="tabular flex items-baseline gap-[1px]" data-currency="usd">
                     <span className="text-[22px] font-bold text-[#2e945c] tracking-tighter leading-none">$32</span><span className="text-[11px] font-bold text-[#2e945c]/60">.00</span>
                   </div>
                 </div>
