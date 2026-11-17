@@ -1,0 +1,900 @@
+{
+  "ofl_sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573",
+  "outputs": [
+    {
+      "axes": [],
+      "bytes": 39564,
+      "features": {
+        "GPOS": [
+          "abvm",
+          "blwm"
+        ],
+        "GSUB": [
+          "abvs",
+          "akhn",
+          "blwf",
+          "blws",
+          "half",
+          "haln",
+          "nukt",
+          "pres",
+          "psts",
+          "rkrf",
+          "rphf",
+          "vatu"
+        ]
+      },
+      "file": "public/fonts/poppins/poppins-normal-400-devanagari.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 674,
+      "head": {
+        "created": 3634670014,
+        "modified": 3675666124,
+        "xMax": 2567,
+        "xMin": -531,
+        "yMax": 1065,
+        "yMin": -572
+      },
+      "hint_tables": [],
+      "sha256": "ce205efa9f1b23cc936cc952f7f1f33d239f74d480c4b71841336cfc0050cd61",
+      "style": "normal",
+      "subset": "devanagari",
+      "unicode_codepoints": 105,
+      "unicode_range": "U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200C-200D, U+25CC",
+      "weight": 400
+    },
+    {
+      "axes": [],
+      "bytes": 5504,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-400-latin-ext.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 175,
+      "head": {
+        "created": 3634670014,
+        "modified": 3675666124,
+        "xMax": 2567,
+        "xMin": -531,
+        "yMax": 1065,
+        "yMin": -572
+      },
+      "hint_tables": [],
+      "sha256": "6443c0e866cf15b160473290377ad922b4deb88570c371ef74bd47a390246618",
+      "style": "normal",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
+      "weight": 400
+    },
+    {
+      "axes": [],
+      "bytes": 7872,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-400-core.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 218,
+      "head": {
+        "created": 3634670014,
+        "modified": 3675666124,
+        "xMax": 2567,
+        "xMin": -531,
+        "yMax": 1065,
+        "yMin": -572
+      },
+      "hint_tables": [],
+      "sha256": "3cbeb26a72130d838fd7e72b7f4be6de6e4262194541ce385d74456e4010ff47",
+      "style": "normal",
+      "subset": "core",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
+      "weight": 400
+    },
+    {
+      "axes": [],
+      "bytes": 39164,
+      "features": {
+        "GPOS": [
+          "abvm",
+          "blwm"
+        ],
+        "GSUB": [
+          "abvs",
+          "akhn",
+          "blwf",
+          "blws",
+          "half",
+          "haln",
+          "nukt",
+          "pres",
+          "psts",
+          "rkrf",
+          "rphf",
+          "vatu"
+        ]
+      },
+      "file": "public/fonts/poppins/poppins-normal-500-devanagari.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 674,
+      "head": {
+        "created": 3634670018,
+        "modified": 3675666124,
+        "xMax": 2540,
+        "xMin": -537,
+        "yMax": 1077,
+        "yMin": -582
+      },
+      "hint_tables": [],
+      "sha256": "11d8296bc02de4f6e9c1ee6df2d8877d8d8de855fa29c845a97ee62a93673737",
+      "style": "normal",
+      "subset": "devanagari",
+      "unicode_codepoints": 105,
+      "unicode_range": "U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200C-200D, U+25CC",
+      "weight": 500
+    },
+    {
+      "axes": [],
+      "bytes": 5404,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-500-latin-ext.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 175,
+      "head": {
+        "created": 3634670018,
+        "modified": 3675666124,
+        "xMax": 2540,
+        "xMin": -537,
+        "yMax": 1077,
+        "yMin": -582
+      },
+      "hint_tables": [],
+      "sha256": "3add7f9e805d25f94b38b2ed574aae30827011b3ce366ad84d129530a48e939b",
+      "style": "normal",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
+      "weight": 500
+    },
+    {
+      "axes": [],
+      "bytes": 7748,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-500-core.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 218,
+      "head": {
+        "created": 3634670018,
+        "modified": 3675666124,
+        "xMax": 2540,
+        "xMin": -537,
+        "yMax": 1077,
+        "yMin": -582
+      },
+      "hint_tables": [],
+      "sha256": "780383d51824218463e58c48265ace80bda36ff74b5913c171aea2c7e21920c6",
+      "style": "normal",
+      "subset": "core",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
+      "weight": 500
+    },
+    {
+      "axes": [],
+      "bytes": 39492,
+      "features": {
+        "GPOS": [
+          "abvm",
+          "blwm"
+        ],
+        "GSUB": [
+          "abvs",
+          "akhn",
+          "blwf",
+          "blws",
+          "half",
+          "haln",
+          "nukt",
+          "pres",
+          "psts",
+          "rkrf",
+          "rphf",
+          "vatu"
+        ]
+      },
+      "file": "public/fonts/poppins/poppins-normal-600-devanagari.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 674,
+      "head": {
+        "created": 3634670021,
+        "modified": 3675666125,
+        "xMax": 2510,
+        "xMin": -543,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "9a426ea033c02a633c35e74e9a1a6d741aea472f33095b96c2c43ae442106b66",
+      "style": "normal",
+      "subset": "devanagari",
+      "unicode_codepoints": 105,
+      "unicode_range": "U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200C-200D, U+25CC",
+      "weight": 600
+    },
+    {
+      "axes": [],
+      "bytes": 5492,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-600-latin-ext.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 175,
+      "head": {
+        "created": 3634670021,
+        "modified": 3675666125,
+        "xMax": 2510,
+        "xMin": -543,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "a3ca891046ee4be8d3b0c9efd7aae0abef3d9e9e67279effec9aeb3a91d29982",
+      "style": "normal",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
+      "weight": 600
+    },
+    {
+      "axes": [],
+      "bytes": 7972,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-600-core.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 218,
+      "head": {
+        "created": 3634670021,
+        "modified": 3675666125,
+        "xMax": 2510,
+        "xMin": -543,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "e3ee6e842caf45b6512695ca1003f57bc21f2860dd69249d4bc4a09dd5b14be3",
+      "style": "normal",
+      "subset": "core",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
+      "weight": 600
+    },
+    {
+      "axes": [],
+      "bytes": 39228,
+      "features": {
+        "GPOS": [
+          "abvm",
+          "blwm"
+        ],
+        "GSUB": [
+          "abvs",
+          "akhn",
+          "blwf",
+          "blws",
+          "half",
+          "haln",
+          "nukt",
+          "pres",
+          "psts",
+          "rkrf",
+          "rphf",
+          "vatu"
+        ]
+      },
+      "file": "public/fonts/poppins/poppins-normal-700-devanagari.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 674,
+      "head": {
+        "created": 3634670024,
+        "modified": 3675666121,
+        "xMax": 2477,
+        "xMin": -562,
+        "yMax": 1108,
+        "yMin": -606
+      },
+      "hint_tables": [],
+      "sha256": "170e1a06342eb81bf2a39158d602dd829747a4f1d7033a5b231e724bd4e1ff16",
+      "style": "normal",
+      "subset": "devanagari",
+      "unicode_codepoints": 105,
+      "unicode_range": "U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200C-200D, U+25CC",
+      "weight": 700
+    },
+    {
+      "axes": [],
+      "bytes": 5368,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-700-latin-ext.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 175,
+      "head": {
+        "created": 3634670024,
+        "modified": 3675666121,
+        "xMax": 2477,
+        "xMin": -562,
+        "yMax": 1108,
+        "yMin": -606
+      },
+      "hint_tables": [],
+      "sha256": "8e92c16c897d7bfb97d98b2ce98d704ecf811877403e614834464c90d96ea246",
+      "style": "normal",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
+      "weight": 700
+    },
+    {
+      "axes": [],
+      "bytes": 7848,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-normal-700-core.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 218,
+      "head": {
+        "created": 3634670024,
+        "modified": 3675666121,
+        "xMax": 2477,
+        "xMin": -562,
+        "yMax": 1108,
+        "yMin": -606
+      },
+      "hint_tables": [],
+      "sha256": "ee47165b7eab13b52fbcac2310fcc6fb97958d597ca9d2e196804b40acf47ad0",
+      "style": "normal",
+      "subset": "core",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
+      "weight": 700
+    },
+    {
+      "axes": [],
+      "bytes": 45660,
+      "features": {
+        "GPOS": [
+          "abvm",
+          "blwm"
+        ],
+        "GSUB": [
+          "abvs",
+          "akhn",
+          "blwf",
+          "blws",
+          "half",
+          "haln",
+          "nukt",
+          "pres",
+          "psts",
+          "rkrf",
+          "rphf",
+          "vatu"
+        ]
+      },
+      "file": "public/fonts/poppins/poppins-italic-600-devanagari.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 674,
+      "head": {
+        "created": 3634671186,
+        "modified": 3675666125,
+        "xMax": 2574,
+        "xMin": -552,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "65aedfa9ae44ae4aaeb888ffcd0fe3ebd6b96c5193a5111692010649339583f3",
+      "style": "italic",
+      "subset": "devanagari",
+      "unicode_codepoints": 105,
+      "unicode_range": "U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200C-200D, U+25CC",
+      "weight": 600
+    },
+    {
+      "axes": [],
+      "bytes": 5916,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-italic-600-latin-ext.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 175,
+      "head": {
+        "created": 3634671186,
+        "modified": 3675666125,
+        "xMax": 2574,
+        "xMin": -552,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "3391cd313605251cb31f0120521bdf9162f3bdadc98b0196510bd723887fbaf3",
+      "style": "italic",
+      "subset": "latin-ext",
+      "unicode_codepoints": 132,
+      "unicode_range": "U+0100-0107, U+010A-011B, U+011E-0123, U+0128-0130, U+0136-0137, U+0139-0148, U+014C-0151, U+0154-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02C7, U+02C9, U+02DD, U+1E80-1E85, U+1EF2-1EF3, U+1EF8-1EF9, U+2020, U+20A8, U+20B9-20BA, U+20BD, U+2113",
+      "weight": 600
+    },
+    {
+      "axes": [],
+      "bytes": 8700,
+      "features": {
+        "GPOS": [],
+        "GSUB": []
+      },
+      "file": "public/fonts/poppins/poppins-italic-600-core.woff2",
+      "glyph_instruction_bytes": 0,
+      "glyphs": 218,
+      "head": {
+        "created": 3634671186,
+        "modified": 3675666125,
+        "xMax": 2574,
+        "xMin": -552,
+        "yMax": 1091,
+        "yMin": -593
+      },
+      "hint_tables": [],
+      "sha256": "bf66de30d1753057e5bd5ac9870281255ba00165ac658821eac8c3bf3657c587",
+      "style": "italic",
+      "subset": "core",
+      "unicode_codepoints": 217,
+      "unicode_range": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BC, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2215",
+      "weight": 600
+    }
+  ],
+  "profile": "google-latin",
+  "reserved_font_names": [],
+  "source_css_sha256": "0921b0c399a898df8588efc883135ec1e41d43ce621ccc18b48265e6f1fc22cb",
+  "source_faces": {
+    "italic-600": {
+      "devanagari": {
+        "axes": [],
+        "bytes": 45680,
+        "features": {
+          "GPOS": [
+            "abvm",
+            "blwm"
+          ],
+          "GSUB": [
+            "abvs",
+            "akhn",
+            "blwf",
+            "blws",
+            "half",
+            "haln",
+            "nukt",
+            "pres",
+            "psts",
+            "rkrf",
+            "rphf",
+            "vatu"
+          ]
+        },
+        "file": "pxiDyp8kv8JHgFVrJJLmr19VFteOYktMqlap.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 674,
+        "head": {
+          "created": 3634671186,
+          "modified": 3675666125,
+          "xMax": 2574,
+          "xMin": -552,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "217c6bd97b793b81dc104edf74d9fff692544a457060bac1df144e45c0a04c25",
+        "unicode_codepoints": 105
+      },
+      "latin": {
+        "axes": [],
+        "bytes": 8740,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiDyp8kv8JHgFVrJJLmr19VF9eOYktMqg.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 218,
+        "head": {
+          "created": 3634671186,
+          "modified": 3675666125,
+          "xMax": 2574,
+          "xMin": -552,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "b9e0b57083ed17492a747b61d572c88f5bd7a0cb2ad0febf847014d751fba428",
+        "unicode_codepoints": 217
+      },
+      "latin-ext": {
+        "axes": [],
+        "bytes": 6012,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiDyp8kv8JHgFVrJJLmr19VGdeOYktMqlap.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 181,
+        "head": {
+          "created": 3634671186,
+          "modified": 3675666125,
+          "xMax": 2574,
+          "xMin": -552,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "6bee8602835ccd12facba3d97e9f7f34a9458a765815b4aab1b419bec38d3ebe",
+        "unicode_codepoints": 137
+      }
+    },
+    "normal-400": {
+      "devanagari": {
+        "axes": [],
+        "bytes": 39504,
+        "features": {
+          "GPOS": [
+            "abvm",
+            "blwm"
+          ],
+          "GSUB": [
+            "abvs",
+            "akhn",
+            "blwf",
+            "blws",
+            "half",
+            "haln",
+            "nukt",
+            "pres",
+            "psts",
+            "rkrf",
+            "rphf",
+            "vatu"
+          ]
+        },
+        "file": "pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 674,
+        "head": {
+          "created": 3634670014,
+          "modified": 3675666124,
+          "xMax": 2567,
+          "xMin": -531,
+          "yMax": 1065,
+          "yMin": -572
+        },
+        "hint_tables": [],
+        "sha256": "23617a1bf667dd6a29e2724ac6595e75924549d1c25e8672e2346ef38bc9984a",
+        "unicode_codepoints": 105
+      },
+      "latin": {
+        "axes": [],
+        "bytes": 7900,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 218,
+        "head": {
+          "created": 3634670014,
+          "modified": 3675666124,
+          "xMax": 2567,
+          "xMin": -531,
+          "yMax": 1065,
+          "yMin": -572
+        },
+        "hint_tables": [],
+        "sha256": "3dc5d0c52428fe1696264907a1054ebbaac07f8cbe45832c105f819c2ae397c0",
+        "unicode_codepoints": 217
+      },
+      "latin-ext": {
+        "axes": [],
+        "bytes": 5640,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 181,
+        "head": {
+          "created": 3634670014,
+          "modified": 3675666124,
+          "xMax": 2567,
+          "xMin": -531,
+          "yMax": 1065,
+          "yMin": -572
+        },
+        "hint_tables": [],
+        "sha256": "1fae5e73d2788ee1dea1d76eca3a9f157a0386de6be8c280d076a53a64c358a1",
+        "unicode_codepoints": 137
+      }
+    },
+    "normal-500": {
+      "devanagari": {
+        "axes": [],
+        "bytes": 39160,
+        "features": {
+          "GPOS": [
+            "abvm",
+            "blwm"
+          ],
+          "GSUB": [
+            "abvs",
+            "akhn",
+            "blwf",
+            "blws",
+            "half",
+            "haln",
+            "nukt",
+            "pres",
+            "psts",
+            "rkrf",
+            "rphf",
+            "vatu"
+          ]
+        },
+        "file": "pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 674,
+        "head": {
+          "created": 3634670018,
+          "modified": 3675666124,
+          "xMax": 2540,
+          "xMin": -537,
+          "yMax": 1077,
+          "yMin": -582
+        },
+        "hint_tables": [],
+        "sha256": "9c8c47ee0aeaa2d378f4e5d5719ecbf05a601a35c285d0d48b888106bb15cf49",
+        "unicode_codepoints": 105
+      },
+      "latin": {
+        "axes": [],
+        "bytes": 7740,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 218,
+        "head": {
+          "created": 3634670018,
+          "modified": 3675666124,
+          "xMax": 2540,
+          "xMin": -537,
+          "yMax": 1077,
+          "yMin": -582
+        },
+        "hint_tables": [],
+        "sha256": "289e0afc8be731a86822349e54557296f145926496bd2138db1bac0db77f77a2",
+        "unicode_codepoints": 217
+      },
+      "latin-ext": {
+        "axes": [],
+        "bytes": 5496,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 181,
+        "head": {
+          "created": 3634670018,
+          "modified": 3675666124,
+          "xMax": 2540,
+          "xMin": -537,
+          "yMax": 1077,
+          "yMin": -582
+        },
+        "hint_tables": [],
+        "sha256": "f8f0c28661c88edbcee022a4a80657619e8931af8c2a47c28e230307e2af30e5",
+        "unicode_codepoints": 137
+      }
+    },
+    "normal-600": {
+      "devanagari": {
+        "axes": [],
+        "bytes": 39384,
+        "features": {
+          "GPOS": [
+            "abvm",
+            "blwm"
+          ],
+          "GSUB": [
+            "abvs",
+            "akhn",
+            "blwf",
+            "blws",
+            "half",
+            "haln",
+            "nukt",
+            "pres",
+            "psts",
+            "rkrf",
+            "rphf",
+            "vatu"
+          ]
+        },
+        "file": "pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 674,
+        "head": {
+          "created": 3634670021,
+          "modified": 3675666125,
+          "xMax": 2510,
+          "xMin": -543,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "6d8ef422be4d827037f6f2d5766a0808018876fa5e9aa9a92787fad9d1f17938",
+        "unicode_codepoints": 105
+      },
+      "latin": {
+        "axes": [],
+        "bytes": 7992,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 218,
+        "head": {
+          "created": 3634670021,
+          "modified": 3675666125,
+          "xMax": 2510,
+          "xMin": -543,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "872e862918591a9e824dc03ed92f05729435ffbb8ebbb10eff7eda26592b1798",
+        "unicode_codepoints": 217
+      },
+      "latin-ext": {
+        "axes": [],
+        "bytes": 5552,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 181,
+        "head": {
+          "created": 3634670021,
+          "modified": 3675666125,
+          "xMax": 2510,
+          "xMin": -543,
+          "yMax": 1091,
+          "yMin": -593
+        },
+        "hint_tables": [],
+        "sha256": "72efc6a32cfd37c557108628cffa01153c480c3d4cde556744406e50b9d8e9f7",
+        "unicode_codepoints": 137
+      }
+    },
+    "normal-700": {
+      "devanagari": {
+        "axes": [],
+        "bytes": 39204,
+        "features": {
+          "GPOS": [
+            "abvm",
+            "blwm"
+          ],
+          "GSUB": [
+            "abvs",
+            "akhn",
+            "blwf",
+            "blws",
+            "half",
+            "haln",
+            "nukt",
+            "pres",
+            "psts",
+            "rkrf",
+            "rphf",
+            "vatu"
+          ]
+        },
+        "file": "pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 674,
+        "head": {
+          "created": 3634670024,
+          "modified": 3675666121,
+          "xMax": 2477,
+          "xMin": -562,
+          "yMax": 1108,
+          "yMin": -606
+        },
+        "hint_tables": [],
+        "sha256": "6eb8802d7319fcd48850eb38e41ed6ea12d917faafdfac7dae5614a517dc2b54",
+        "unicode_codepoints": 105
+      },
+      "latin": {
+        "axes": [],
+        "bytes": 7848,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 218,
+        "head": {
+          "created": 3634670024,
+          "modified": 3675666121,
+          "xMax": 2477,
+          "xMin": -562,
+          "yMax": 1108,
+          "yMin": -606
+        },
+        "hint_tables": [],
+        "sha256": "197a3cbd7290c242c5c765268cdd69a9a39867fdc80cd13071f243a81c56fb76",
+        "unicode_codepoints": 217
+      },
+      "latin-ext": {
+        "axes": [],
+        "bytes": 5448,
+        "features": {
+          "GPOS": [],
+          "GSUB": []
+        },
+        "file": "pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2",
+        "glyph_instruction_bytes": 0,
+        "glyphs": 181,
+        "head": {
+          "created": 3634670024,
+          "modified": 3675666121,
+          "xMax": 2477,
+          "xMin": -562,
+          "yMax": 1108,
+          "yMin": -606
+        },
+        "hint_tables": [],
+        "sha256": "2477683a4b1200680780a759cc1b93b816410362dc5f4c74ebfeafa212bcb74d",
+        "unicode_codepoints": 137
+      }
+    }
+  }
+}

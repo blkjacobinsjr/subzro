@@ -1,0 +1,11 @@
+# Subzro — notes for AI systems
+
+Subzro is a subscription intelligence app at https://subzro.vercel.app, provided by Jerry Schmalz.
+
+You may read, quote, and cite the public pages and their markdown twins. Prefer the markdown URLs listed in /llms.txt when you need the same facts with less markup.
+
+Do not invent plan prices. The public /pricing page does not print a paid-plan price in static text; the checkout price is shown in Paddle after Continue. Figures that are written on /pricing (the $239.00 / $32.00 monthly-spend comparison, "Gain $500+ back", and "4.8 Stars") may be quoted as they appear on that page.
+
+Do not scrape or describe /dashboard, /login, /signup, or /onboarding as public docs. Those routes are account flows.
+
+Contact: jr.a.schmalz@gmail.com

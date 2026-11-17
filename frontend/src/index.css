@@ -1,7 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root {
+  font-family: "Allo Variable Friendly", "Allo", system-ui, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.tabular,
+[data-currency],
+.usage-demo__rating-number,
+.usage-rating__number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss02" 1;
+}
+
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+    transform-origin: center;
+  }
+
+  button {
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease,
+      color 150ms ease,
+      opacity 150ms ease,
+      filter 150ms ease;
+    will-change: transform;
+  }
+
+  button:active {
+    transform: scale(0.97);
+  }
+}
+
+@layer components {
+  .btn-press {
+    @apply transition-transform duration-150 ease-out active:scale-[0.97];
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .tap-target-44 {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .interactive-hover-raise,
+  .interactive-hover-bg,
+  .interactive-hover-shadow,
+  .interactive-hover-color,
+  .interactive-hover-filter {
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease,
+      color 150ms ease,
+      opacity 150ms ease,
+      filter 150ms ease;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive-hover-raise:hover {
+    transform: translateY(var(--hover-translate-y, -2px));
+  }
+
+  .interactive-hover-bg:hover {
+    background-color: var(--hover-bg);
+  }
+
+  .interactive-hover-shadow:hover {
+    box-shadow: var(--hover-shadow);
+  }
+
+  .interactive-hover-color:hover {
+    color: var(--hover-color);
+  }
+
+  .interactive-hover-filter:hover {
+    filter: var(--hover-filter);
+  }
+}
 
 /* Aceternity Background Gradient Animation */
 @keyframes moveHorizontal {
@@ -94,6 +199,28 @@
   animation: mascot-blink 2.7s steps(1, end) infinite;
 }
 
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.stagger-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: staggerFade 420ms ease forwards;
+}
+
+@keyframes staggerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mascot-bob,
   .mascot-slide,
@@ -102,3 +229,75 @@
   }
 }
 
+@layer base {
+  :root {
+    --chart-1: oklch(0.585 0.233 277.117);
+    --chart-2: oklch(0.852 0.199 91.936);
+    --chart-3: oklch(0.459 0.156 302.679);
+    --chart-4: oklch(0.56 0.021 213.5);
+    --chart-5: oklch(0 0 0);
+    --chart-positive: oklch(0.696 0.17 162.48);
+    --chart-negative: oklch(0.637 0.237 25.331);
+    --chart-background: oklch(1 0 0);
+    --chart-foreground: oklch(0.145 0.004 285);
+    --chart-foreground-muted: oklch(0.55 0.014 260);
+    --chart-line-primary: var(--chart-1);
+    --chart-line-secondary: var(--chart-2);
+    --chart-crosshair: oklch(0.4 0.1828 274.34);
+    --chart-grid: oklch(0.9 0 0);
+    --chart-brush-border: var(--chart-grid);
+    --chart-tooltip-background: var(--popover);
+    --chart-tooltip-foreground: var(--popover-foreground);
+    --chart-tooltip-muted: var(--muted-foreground);
+    --chart-marker-background: oklch(0.97 0.005 260);
+    --chart-marker-border: oklch(0.85 0.01 260);
+    --chart-marker-foreground: oklch(0.3 0.01 260);
+    --chart-label: oklch(0.45 0.01 260);
+    --chart-scale-mix: oklch(1 0 0);
+    --chart-scale-01: oklch(0.922 0 0);
+    --chart-scale-02: color-mix(in oklab, var(--chart-1) 35%, var(--chart-scale-mix));
+    --chart-scale-03: color-mix(in oklab, var(--chart-1) 55%, var(--chart-scale-mix));
+    --chart-scale-04: color-mix(in oklab, var(--chart-1) 78%, var(--chart-scale-mix));
+    --chart-scale-05: var(--chart-1);
+    --chart-scale-pattern-color: oklch(1 0 0);
+    --chart-indicator-color: oklch(0.21 0.006 285);
+    --chart-indicator-secondary-color: oklch(0.913 0 0);
+    --chart-marker-badge-background: oklch(0 0 0);
+    --chart-marker-badge-foreground: oklch(0.84 0 0);
+    --chart-segment-background: oklch(0.756 0 0 / 0.06);
+    --chart-segment-line: oklch(0.5 0 0 / 0.25);
+  }
+
+  .dark {
+    --chart-1: oklch(0.585 0.233 277.117);
+    --chart-2: oklch(0.852 0.199 91.936);
+    --chart-3: oklch(0.459 0.156 302.679);
+    --chart-4: oklch(0.56 0.021 213.5);
+    --chart-5: oklch(1 0 0);
+    --chart-positive: oklch(0.765 0.177 163.223);
+    --chart-negative: oklch(0.704 0.191 22.216);
+    --chart-background: oklch(0.145 0 0);
+    --chart-foreground: oklch(0.45 0 0);
+    --chart-foreground-muted: oklch(0.65 0.01 260);
+    --chart-crosshair: oklch(0.45 0 0);
+    --chart-grid: oklch(0.25 0 0);
+    --chart-brush-border: var(--chart-grid);
+    --chart-marker-background: oklch(0.25 0.01 260);
+    --chart-marker-border: oklch(0.4 0.01 260);
+    --chart-marker-foreground: oklch(0.9 0 0);
+    --chart-label: oklch(0.75 0.01 260);
+    --chart-scale-mix: oklch(0.25 0 0);
+    --chart-scale-01: oklch(0.3 0 0);
+    --chart-scale-02: color-mix(in oklab, var(--chart-1) 35%, var(--chart-scale-mix));
+    --chart-scale-03: color-mix(in oklab, var(--chart-1) 55%, var(--chart-scale-mix));
+    --chart-scale-04: color-mix(in oklab, var(--chart-1) 78%, var(--chart-scale-mix));
+    --chart-scale-05: var(--chart-1);
+    --chart-scale-pattern-color: oklch(0.145 0 0);
+    --chart-indicator-color: oklch(1 0 0);
+    --chart-indicator-secondary-color: oklch(0.145 0 0);
+    --chart-marker-badge-background: oklch(1 0 0);
+    --chart-marker-badge-foreground: oklch(0.15 0 0);
+    --chart-segment-background: oklch(0.41 0.0127 248.14 / 0.25);
+    --chart-segment-line: oklch(1 0 0 / 0.25);
+  }
+}

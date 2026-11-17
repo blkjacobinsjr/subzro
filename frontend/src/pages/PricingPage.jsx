@@ -1,8 +1,9 @@
-import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { ShieldCheckIcon, SparklesIcon, StarIcon, BanknotesIcon } from '@heroicons/react/24/solid';
+import PublicNav from "../components/PublicNav";
 import Grainient from "../components/ui/Grainient";
 import { logOnboardingEvent } from "../utils/onboardingDebug";
 
@@ -177,7 +178,7 @@ export default function PricingPage() {
   ]);
 
   return (
-    <div className="relative min-h-[100dvh] bg-[#F4F6F9] overflow-x-hidden selection:bg-[#007AFF]/20 pb-[140px] flex flex-col items-center">
+    <div className="relative min-h-[100dvh] bg-[#F4F6F9] overflow-x-clip selection:bg-[#007AFF]/20 pb-[140px] flex flex-col items-center">
       <div className="fixed inset-0 pointer-events-none">
         <Grainient />
       </div>
@@ -188,35 +189,7 @@ export default function PricingPage() {
         <div className="absolute top-1/2 right-[-20%] h-80 w-80 rounded-full bg-[#42D587]/30 blur-[100px]" />
       </div>
 
-      <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-white/50 hidden md:block px-4">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/subzero_logo_icon.png" alt="Subzro" className="h-7 w-7" />
-            <span className="text-lg font-semibold text-black/80">subzro</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <SignedIn>
-              <Link to="/dashboard" className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white">
-                Dashboard
-              </Link>
-              <UserButton afterSignOutUrl={window.location.origin} />
-            </SignedIn>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main minimal mobile topbar for context returning */}
-      <div className="md:hidden flex h-14 px-6 items-center justify-between w-full z-40 relative mt-2">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/subzero_logo_icon.png" alt="Subzro" className="h-6 w-6" />
-          <span className="text-[17px] font-semibold tracking-tight text-black flex items-center gap-2">
-            subzro
-            <span className="inline-flex items-center gap-1 rounded bg-[#f4fbf7] border border-[#42D587]/20 px-1.5 py-0.5 text-[9px] uppercase tracking-widest font-bold text-[#2e945c] shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-              Matcha Plan
-            </span>
-          </span>
-        </Link>
-      </div>
+      <PublicNav checkout={autoCheckout || checkoutSource === "subzro_onboarding"} />
 
       <main className="mx-auto w-full max-w-[420px] px-4 pt-4 sm:pt-14 flex flex-col items-center animate-in fade-in duration-500">
         {/* Before & After Split Chart Card */}
@@ -241,7 +214,7 @@ export default function PricingPage() {
               <div className="relative w-full rounded-[16px] bg-black/[0.025] border border-black/[0.04] p-2.5 pb-2 shadow-inner">
                 <div className="mb-[18px]">
                   <p className="text-[8.5px] font-bold tracking-[0.06em] uppercase text-black/40 mb-[-2px]">Monthly Spends</p>
-                  <div className="flex items-baseline gap-[1px]">
+                  <div className="tabular flex items-baseline gap-[1px]" data-currency="usd">
                     <span className="text-[22px] font-bold text-black/85 tracking-tighter leading-none">$239</span><span className="text-[11px] font-bold text-black/40">.00</span>
                   </div>
                 </div>
@@ -296,7 +269,7 @@ export default function PricingPage() {
 
                 <div className="mb-[18px]">
                   <p className="text-[8.5px] font-bold tracking-[0.06em] uppercase text-black/40 mb-[-2px]">Monthly Spends</p>
-                  <div className="flex items-baseline gap-[1px]">
+                  <div className="tabular flex items-baseline gap-[1px]" data-currency="usd">
                     <span className="text-[22px] font-bold text-[#2e945c] tracking-tighter leading-none">$32</span><span className="text-[11px] font-bold text-[#2e945c]/60">.00</span>
                   </div>
                 </div>
@@ -394,7 +367,7 @@ export default function PricingPage() {
           type="button"
           onClick={openCheckout}
           disabled={isLoading}
-          className="relative w-full max-w-[360px] rounded-full bg-gradient-to-r from-[#42d587] via-[#6ce0b8] to-[#ffbd67] py-[17px] text-center shadow-[0_8px_24px_-6px_rgba(66,213,135,0.4)] transition-all hover:brightness-105 active:scale-[0.98] disabled:opacity-60 disabled:scale-100 overflow-hidden"
+          className="btn-press tap-target-44 interactive-hover-filter interactive-hover-shadow relative w-full max-w-[360px] overflow-hidden rounded-full bg-gradient-to-r from-[#42d587] via-[#6ce0b8] to-[#ffbd67] py-[17px] text-center shadow-[0_8px_24px_-6px_rgba(66,213,135,0.4)] disabled:scale-100 disabled:opacity-60 [--hover-filter:brightness(1.05)] [--hover-shadow:0_18px_42px_-18px_rgba(66,213,135,0.45)]"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[100%] animate-[shimmer_2.5s_infinite]"></div>
           <p className="text-[17px] font-bold tracking-wide text-black/90">

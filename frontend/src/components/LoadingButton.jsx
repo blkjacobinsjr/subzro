@@ -1,3 +1,5 @@
+import { AppButton } from "./ui/AppButton";
+
 export default function LoadingButton({
   isLoading = false,
   loadingText,
@@ -9,8 +11,10 @@ export default function LoadingButton({
   const isDisabled = disabled || isLoading;
 
   return (
-    <button
+    <AppButton
       {...props}
+      type={props.type ?? "submit"}
+      variant="inherit"
       disabled={isDisabled}
       aria-busy={isLoading}
       className={`btn-press inline-flex items-center justify-center gap-2 ${className}`}
@@ -23,6 +27,6 @@ export default function LoadingButton({
         />
       )}
       <span>{isLoading && loadingText ? loadingText : children}</span>
-    </button>
+    </AppButton>
   );
 }

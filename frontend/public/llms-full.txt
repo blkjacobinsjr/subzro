@@ -1,0 +1,281 @@
+# Subzro
+
+Zero in on What Matters.
+
+Your personal finance pet for subscriptions. Bring recurring costs and little usage check-ins together, then decide what still earns a spot in your list.
+
+No bank connection needed to get started.
+
+- [Get started](https://subzro.vercel.app/signup)
+- [Sign in](https://subzro.vercel.app/login)
+- [Pricing](https://subzro.vercel.app/pricing)
+
+## At a glance
+
+- One place: See your recurring subscriptions together.
+- Clear costs: Keep monthly spend easy to review.
+- Your call: Choose what to keep, review, or cancel.
+
+## What you can do with Subzro
+
+See recurring costs, understand your usage, and make decisions with the full picture in view.
+
+### Your full picture, one glance
+
+See your active subscriptions and monthly spend on a single screen. Keep recurring costs easy to find and review.
+
+### See what gets used
+
+Review your most and least used subscriptions, then decide what still feels worth keeping.
+
+### Understand where it goes
+
+See your highest-spend categories and follow individual subscription costs over time as you update your list.
+
+### Keep the list in your hands
+
+Search and filter your subscriptions. Use each service's score to decide what stays, what needs a review, and what you want to cancel.
+
+## A quiet check-in on what you use
+
+Subzro can ask how often you use a subscription, so you can review it before deciding what to keep or cancel. The homepage includes an interactive usage demo of that check-in.
+
+## Made for the subscriptions you juggle
+
+One calm place to look across streaming, work, and the things you belong to.
+
+- One clear list: Bring streaming services, work tools, and memberships together in one view.
+- Usage-led reviews: Check how often you use a service before you decide what to keep or cancel.
+- Start without a bank link: Add your subscriptions without connecting a bank account.
+
+## How Subzro brings clarity
+
+1. Add subscriptions. Enter the recurring services you want to keep track of. No bank login is needed.
+2. See the full picture. Review your subscription list, monthly costs, and usage insights together.
+3. Choose what stays. Keep, cancel, or revisit subscriptions based on what works for you.
+
+## A clearer view starts with your list
+
+Add subscriptions, review usage, and decide what is worth keeping.
+
+- [Create your list](https://subzro.vercel.app/signup)
+- [View pricing](https://subzro.vercel.app/pricing)
+
+## Legal
+
+- [Imprint](https://subzro.vercel.app/impressum.md)
+- [Terms of Service](https://subzro.vercel.app/terms.md)
+- [Privacy Policy](https://subzro.vercel.app/privacy.md)
+- [Refund and Withdrawal Policy](https://subzro.vercel.app/refund.md)
+
+HTML: https://subzro.vercel.app/
+Markdown: https://subzro.vercel.app/index.md
+
+---
+
+# Pricing
+
+Start your clean slate. Gain $500+ back.
+
+The public pricing page is a checkout screen, not a plan table. Figures below are the numbers written on that page. The paid plan price is shown in the Paddle checkout after you tap Continue, not as static text on the page. All prices shown at checkout are binding.
+
+## Monthly spend comparison shown on the page
+
+|  | Monthly spends |
+| --- | ---: |
+| Before Subzro | $239.00 |
+| After Subzro | $32.00 |
+
+The "Before" side shows uneven weekly bars (W1–W4). The "After" side shows four even green bars.
+
+## What the page says
+
+- Total clarity. Find sneaky charges before they hit your bank.
+- Own your money. Only pay for the exact subscriptions you truly need.
+- Cancel painlessly. We make ditching awful subscription services effortless.
+
+The page also shows a "4.8 Stars" line. Continue opens the Paddle checkout for the monthly paid plan.
+
+## Legal
+
+- [Imprint](https://subzro.vercel.app/impressum.md)
+- [Terms](https://subzro.vercel.app/terms.md)
+- [Privacy](https://subzro.vercel.app/privacy.md)
+- [Refunds](https://subzro.vercel.app/refund.md)
+
+HTML: https://subzro.vercel.app/pricing
+Markdown: https://subzro.vercel.app/pricing.md
+
+---
+
+# Privacy Policy
+
+Information under Articles 13 and 14 GDPR.
+
+Updated February 17, 2026
+
+## Controller
+
+Jerry Schmalz
+Berliner Str 12, 14169 Berlin, Germany
+Email: jr.a.schmalz@gmail.com
+
+## Data categories
+
+Account and contact data, authentication data, subscription records entered by users, usage logs, billing data, and support communication.
+
+## Purposes and legal basis
+
+Contract performance (Art. 6(1)(b) GDPR), legal obligations (Art. 6(1)(c) GDPR), legitimate interests such as service security and abuse prevention (Art. 6(1)(f) GDPR), and consent where required (Art. 6(1)(a) GDPR).
+
+## Recipients
+
+Data is processed by hosting, database, authentication, email, analytics, and payment providers strictly as required to operate the service under data processing agreements where applicable.
+
+## International transfers
+
+If data is transferred to countries outside the EEA, appropriate safeguards such as Standard Contractual Clauses are used.
+
+## Storage periods
+
+Data is stored only as long as needed for contract fulfillment and statutory retention obligations. Then data is deleted or anonymized.
+
+## Your rights
+
+You can request access, rectification, erasure, restriction, data portability, and object to processing. You can revoke consent at any time with future effect.
+
+## Supervisory authority
+
+You have the right to lodge a complaint with a data protection authority, including the authority responsible for Berlin.
+
+Source: https://subzro.vercel.app/privacy
+Markdown twin: https://subzro.vercel.app/privacy.md
+
+---
+
+# Terms of Service
+
+Contract terms for use of Subzro software services.
+
+Updated February 17, 2026
+
+## Scope and provider
+
+Subzro is provided by Jerry Schmalz. These terms apply to all users of https://subzro.vercel.app.
+
+## Account and contract conclusion
+
+A contract is formed when you complete sign up and, for paid plans, when checkout is completed successfully.
+
+## Prices, billing, and renewal
+
+All prices shown at checkout are binding. Paid subscriptions renew automatically for the selected billing period unless canceled before renewal.
+
+## Cancellation
+
+You can cancel through the billing portal or by email at any time. Access remains active until the end of the paid period unless a statutory withdrawal right applies.
+
+## Consumer withdrawal rights
+
+For consumers, statutory withdrawal rights apply. Details are provided on the refund page, including the model withdrawal form.
+
+## Acceptable use
+
+You must not misuse the service, interfere with security, or use the service for unlawful purposes.
+
+## Availability and changes
+
+We may update features for security, legal compliance, and product improvement. We aim for high availability but do not guarantee uninterrupted operation.
+
+## Liability
+
+Unlimited liability applies for intent, gross negligence, injury to life, body, or health, and mandatory statutory liability. Otherwise liability is limited to foreseeable, typical damage.
+
+## Applicable law
+
+German law applies. Mandatory consumer protection rules of your country of residence remain unaffected.
+
+Source: https://subzro.vercel.app/terms
+Markdown twin: https://subzro.vercel.app/terms.md
+
+---
+
+# Imprint
+
+Provider information under Section 5 DDG and Section 18 (2) MStV.
+
+Updated February 17, 2026
+
+## Provider
+
+Jerry Schmalz (sole proprietor), Subzro
+Berliner Str 12
+14169 Berlin
+Germany
+
+## Contact
+
+Email: jr.a.schmalz@gmail.com
+Phone: +49 160 97740241
+
+## Responsible for content
+
+Responsible according to Section 18 (2) MStV:
+Jerry Schmalz
+Address as above.
+
+## Business activity
+
+Operation of a subscription management software service and freelance web development.
+
+## VAT information
+
+VAT ID according to Section 27a UStG: not provided.
+
+## Consumer dispute resolution
+
+We are not willing and not obliged to participate in dispute resolution proceedings before a consumer arbitration board (Section 36 VSBG).
+
+## EU online dispute platform
+
+The EU online dispute resolution platform was discontinued on July 20, 2025 under Regulation (EU) 2024/3228.
+
+Source: https://subzro.vercel.app/impressum
+Markdown twin: https://subzro.vercel.app/impressum.md
+
+---
+
+# Refund and Withdrawal Policy
+
+Consumer withdrawal rights, cancellations, and refunds.
+
+Updated February 17, 2026
+
+## Statutory withdrawal right for consumers
+
+Consumers have a right of withdrawal within 14 days from contract conclusion. To exercise withdrawal, send a clear statement by email to the contact listed on this page.
+
+## Expiry of withdrawal right
+
+For digital services, the withdrawal right may expire when service performance starts after your explicit consent and your acknowledgment that you lose the withdrawal right once performance begins (Section 356 BGB).
+
+## Cancellation of subscriptions
+
+Subscriptions can be canceled any time before the next renewal. Cancellation stops future renewals and remains active until the end of the current paid period.
+
+## Refund handling
+
+If a valid withdrawal is declared in time, payments are refunded via the original payment method within 14 days. Outside statutory rights, refunds are granted only where legally required or as a voluntary goodwill decision.
+
+## Model withdrawal form
+
+To: jr.a.schmalz@gmail.com
+I/We hereby withdraw from the contract concluded by me/us for the provision of the following service:
+Ordered on:
+Name of consumer(s):
+Address of consumer(s):
+Date:
+Signature (only if submitted on paper):
+
+Source: https://subzro.vercel.app/refund
+Markdown twin: https://subzro.vercel.app/refund.md

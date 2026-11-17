@@ -25,6 +25,8 @@ import useAppHaptics from "../hooks/useAppHaptics";
 import eventEmitter from "../utils/EventEmitter";
 import { createUsageBody } from "../utils/schemaBuilder";
 
+const INSIGHTS_TAB_HISTORY_KEY = "subzroDashboardActiveTab";
+
 function Dashboard() {
   const haptics = useAppHaptics();
 
@@ -42,7 +44,23 @@ function Dashboard() {
   } = useDataContext();
 
   // ---- STATE ----
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTabState] = useState(() =>
+    window.history.state?.[INSIGHTS_TAB_HISTORY_KEY] === "insights"
+      ? "insights"
+      : "home",
+  );
+  const setActiveTab = (tabId) => {
+    const currentState = window.history.state;
+    const nextState =
+      currentState && typeof currentState === "object" ? { ...currentState } : {};
+    if (tabId === "insights") {
+      nextState[INSIGHTS_TAB_HISTORY_KEY] = "insights";
+    } else {
+      delete nextState[INSIGHTS_TAB_HISTORY_KEY];
+    }
+    window.history.replaceState(nextState, "", window.location.href);
+    setActiveTabState(tabId);
+  };
   const [showBulkImport, setShowBulkImport] = useState(false);
   const [subscriptionFormState, setSubscriptionFormState] = useState({
     mode: null,

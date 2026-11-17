@@ -1,192 +1,75 @@
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Gauge } from "./gauge";
 
-const RADIAN = Math.PI / 180;
-
-const needle = (value, data, cx, cy, iR, oR, color) => {
-  let total = 0;
-  data.forEach((v) => {
-    total += v.value;
-  });
-
-  // Clamp value to total so needle doesn't break
-  const clampedValue = Math.min(value, total);
-  const ang = 180.0 * (1 - clampedValue / total);
-  const length = Math.max(oR * 0.85, 20);
-  const sin = Math.sin(-RADIAN * ang);
-  const cos = Math.cos(-RADIAN * ang);
-  const r = 5;
-  const x0 = cx;
-  const y0 = cy;
-  const xba = x0 + r * sin;
-  const yba = y0 - r * cos;
-  const xbb = x0 - r * sin;
-  const ybb = y0 + r * cos;
-  const xp = x0 + length * cos;
-  const yp = y0 + length * sin;
-
-  const CirclePulse = () => (
-    <g>
-      <circle cx={xp} cy={yp} r={6} fill={color} />
-      <circle cx={xp} cy={yp} r={6} fill={color}>
-        <animate
-          attributeName="r"
-          values="6;14;6"
-          dur="2s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0.5;0;0.5"
-          dur="2s"
-          repeatCount="indefinite"
-        />
-      </circle>
-    </g>
-  );
-
-  return [
-    <circle key="circle" cx={x0} cy={y0} r={r} fill={color} stroke="none" />,
-    <path
-      key="path"
-      d={`M${xba} ${yba}L${xbb} ${ybb} L${xp} ${yp} L${xba} ${yba}`}
-      stroke="none"
-      fill="#475569"
-      style={{ filter: "drop-shadow(0px 4px 6px rgba(0,0,0,0.15))" }}
-    />,
-    <CirclePulse key="pulse" />,
-  ];
-};
-
-const CustomTooltip = ({ active, payload, baseValue, userSpend }) => {
-  function getLabel() {
-    const name = payload[0].name;
-    if (name === "Reference") {
-      return baseValue;
-    } else if (name === "Elevated") {
-      return baseValue + payload[0].value;
-    } else {
-      return baseValue + 2 * payload[0].value;
-    }
-  }
-
-  if (active && payload && payload.length) {
-    return (
-      <div className="rounded border-black/25 bg-white/75 p-3 shadow-xl backdrop-blur">
-        <div className="grid grid-cols-[max-content_1fr] gap-2">
-          <div className="text-gray-500">Your Current Spending:</div>
-          <div>EUR {userSpend.toFixed(2)}</div>
-          <div className="text-gray-500">Subzro {payload[0].name} Line:</div>
-          <div>EUR {getLabel()}</div>
-        </div>
-      </div>
-    );
-  }
-  return null;
-};
-
-export default function PieChartWithNeedle({ maxFirstSegment, needleValue }) {
+export default function PieChartWithNeedle({
+  maxFirstSegment = 219,
+  needleValue = 0,
+  compact = false,
+}) {
   const containerRef = useRef(null);
-
-  const [computedCX, setComputedCX] = useState(0);
-  const [computedCY, setComputedCY] = useState(0);
-  const [computedIR, setComputedIR] = useState(0);
-  const [computedOR, setComputedOR] = useState(0);
+  const [size, setSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      const entry = entries[0];
-      if (entry) {
-        const width = entry.target.clientWidth;
-        const height = entry.target.clientHeight;
-        if (width && height) {
-          // Force center to be near the bottom wrapper edge (minus few px for margin)
-          const cy = height - 15;
-          // Radius should fit within half-width or total available height
-          const maxRadius = Math.min(width * 0.45, cy * 0.9);
+    const container = containerRef.current;
+    if (!container) return undefined;
 
-          setComputedCX(width * 0.5);
-          setComputedCY(cy);
-          setComputedOR(maxRadius);
-          setComputedIR(maxRadius * 0.65);
-        }
-      }
+    const observer = new ResizeObserver(([entry]) => {
+      if (!entry) return;
+      setSize({
+        width: entry.contentRect.width,
+        height: entry.contentRect.height,
+      });
     });
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    // Cleanup observer on component unmount
-    return () => {
-      resizeObserver.disconnect();
-    };
+    observer.observe(container);
+    return () => observer.disconnect();
   }, []);
 
-  // IMPORTANT: If the name's here are changed, they also need to be changed in
-  // the CustomTooltip above!
-  const data = [
-    { name: "Reference", value: maxFirstSegment },
-    {
-      name: "Elevated",
-      value: Math.floor(maxFirstSegment / 2),
-    },
-    {
-      name: "Heavy",
-      value: Math.floor(maxFirstSegment / 2),
-    },
-  ];
+  const spend = Math.max(0, Number(needleValue) || 0);
+  const referenceSpend = Math.max(1, Number(maxFirstSegment) || 219);
+  const totalRange = referenceSpend + 2 * Math.floor(referenceSpend / 2);
+  const percent = Math.min(100, (spend / totalRange) * 100);
+
+  const amberThreshold = referenceSpend * 1.5;
+  const wrapperMinimum = compact ? "min-h-[80px]" : "min-h-[120px]";
 
   return (
-    <div ref={containerRef} className="h-full w-full flex items-center justify-center">
-      {computedCX > 0 && (
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
-            <Pie
-              dataKey="value"
-              nameKey="name"
-              startAngle={180}
-              endAngle={0}
-              data={data}
-              cx={computedCX}
-              cy={computedCY}
-              innerRadius={computedIR}
-              outerRadius={computedOR}
-              fill="none"
-              stroke="none"
-              paddingAngle={2}
-            >
-              {data.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={
-                    index === 0 ? "#10b981" : index === 1 ? "#f59e0b" : "#ef4444"
-                  }
-                  className="transition-all duration-300 hover:opacity-80"
-                />
-              ))}
-            </Pie>
-            <Tooltip
-              content={
-                <CustomTooltip
-                  baseValue={maxFirstSegment}
-                  userSpend={needleValue}
-                />
-              }
-            />
-
-            {needle(
-              needleValue,
-              data,
-              computedCX,
-              computedCY,
-              computedIR,
-              computedOR,
-              "#475569",
-            )}
-          </PieChart>
-        </ResponsiveContainer>
-      )}
+    <div
+      className={`flex h-full ${wrapperMinimum} w-full min-w-0 flex-col`}
+      role="img"
+      aria-label={`Monthly spending: €${spend.toFixed(2)}. Reference spending: €${referenceSpend.toFixed(2)}. Amber threshold: €${amberThreshold.toFixed(2)}. Red above €${amberThreshold.toFixed(2)}.`}
+    >
+      <div ref={containerRef} className="min-h-0 w-full flex-1">
+        {size.width > 0 && size.height > 0 && (
+          <Gauge
+            width={size.width}
+            height={size.height}
+            value={percent}
+            startAngle={180}
+            endAngle={360}
+            totalNotches={40}
+            spacing={18}
+            notchCornerRadius={2}
+            needle={{ variant: "triangle", color: "#475569", length: 0.9, pivot: true }}
+            zones={[
+              { from: 0, to: 50, color: "#10b981" },
+              { from: 50, to: 75, color: "#f59e0b" },
+              { from: 75, to: 100, color: "#ef4444" },
+            ]}
+            zoneDisplay="both"
+            activeFill="#10b981"
+            inactiveFill="rgba(71, 85, 105, 0.15)"
+          />
+        )}
+      </div>
+      <div className="flex shrink-0 flex-col items-center text-center leading-tight">
+        <span className={`font-semibold tabular-nums text-black/80 dark:text-white/80 ${compact ? "text-[9px]" : "text-xs"}`}>
+          €{spend.toFixed(2)} / month
+        </span>
+        <span className={`text-black/50 dark:text-white/50 ${compact ? "text-[7px]" : "text-[10px]"}`}>
+          Reference €{referenceSpend.toFixed(2)} / month
+        </span>
+      </div>
     </div>
   );
 }

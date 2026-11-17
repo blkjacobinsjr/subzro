@@ -1,0 +1,21 @@
+# Subzro robots
+# Search and AI-search crawlers are welcome on public pages.
+# Training-only crawlers (GPTBot, CCBot, Bytespider) are not blocked;
+# there is no separate product decision yet to restrict training use.
+
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://subzro.vercel.app/sitemap.xml

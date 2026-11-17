@@ -16,12 +16,19 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['"Allo Variable Friendly"', 'Allo', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "chart-label": "var(--chart-label)",
+        "chart-tooltip-background": "var(--chart-tooltip-background)",
+        "chart-tooltip-foreground": "var(--chart-tooltip-foreground)",
+        "chart-tooltip-muted": "var(--chart-tooltip-muted)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

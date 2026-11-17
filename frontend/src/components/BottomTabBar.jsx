@@ -1,5 +1,7 @@
 import { useCallback, useRef } from "react";
+import { LiquidGlass } from "react-liquid-glass-svg";
 import useAppHaptics from "../hooks/useAppHaptics";
+import "./BottomTabBar.css";
 
 const tabs = [
   {
@@ -8,9 +10,11 @@ const tabs = [
     icon: (active) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill={active ? "currentColor" : "none"}
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={active ? 0 : 1.5}
+        strokeWidth={active ? 1.9 : 1.5}
         stroke="currentColor"
         className="h-6 w-6"
       >
@@ -28,9 +32,11 @@ const tabs = [
     icon: (active) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill={active ? "currentColor" : "none"}
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={active ? 0 : 1.5}
+        strokeWidth={active ? 1.9 : 1.5}
         stroke="currentColor"
         className="h-6 w-6"
       >
@@ -48,9 +54,11 @@ const tabs = [
     icon: (active) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill={active ? "currentColor" : "none"}
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={active ? 0 : 1.5}
+        strokeWidth={active ? 1.9 : 1.5}
         stroke="currentColor"
         className="h-6 w-6"
       >
@@ -68,9 +76,11 @@ const tabs = [
     icon: (active) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill={active ? "currentColor" : "none"}
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={active ? 0 : 1.5}
+        strokeWidth={active ? 1.9 : 1.5}
         stroke="currentColor"
         className="h-6 w-6"
       >
@@ -115,17 +125,25 @@ export default function BottomTabBar({ activeTab, onTabChange }) {
   );
 
   return (
-    <nav
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-black/10 bg-white/60 backdrop-blur-xl dark:border-white/10 dark:bg-black/60"
-      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-    >
-      <div className="mx-auto flex max-w-lg items-center justify-around px-2 py-2">
+    <div className="bottom-tab-bar">
+      <LiquidGlass
+        as="nav"
+        aria-label="Primary navigation"
+        backdropBlur={18}
+        displacementScale={18}
+        glassBorder
+        tintColor="var(--bottom-tab-bar-glass-tint)"
+        className="bottom-tab-bar__glass"
+        style={{ boxShadow: "0 12px 32px rgba(49, 53, 76, 0.15)" }}
+      >
+      <div className="bottom-tab-bar__items">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
             <button
               key={tab.id}
               type="button"
+              aria-current={isActive ? "page" : undefined}
               onPointerUp={(event) => {
                 if (event.pointerType === "touch") {
                   event.preventDefault();
@@ -134,23 +152,20 @@ export default function BottomTabBar({ activeTab, onTabChange }) {
               }}
               onClick={() => activateTab(tab.id)}
               style={{ touchAction: "manipulation" }}
-              className={`flex min-h-[52px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-3 py-2.5 transition-all active:scale-95 ${
-                isActive
-                  ? "text-black dark:text-white"
-                  : "text-black/40 hover:text-black/60 dark:text-white/40 dark:hover:text-white/60"
-              }`}
+              className={`bottom-tab-bar__item${isActive ? " bottom-tab-bar__item--active" : ""}`}
             >
-              <div className="relative">
+              <span className="bottom-tab-bar__icon">
                 {tab.icon(isActive)}
                 {isActive && (
-                  <div className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-black dark:bg-white" />
+                  <span className="bottom-tab-bar__indicator" aria-hidden="true" />
                 )}
-              </div>
-              <span className="text-[10px] font-medium">{tab.label}</span>
+              </span>
+              <span className="bottom-tab-bar__label">{tab.label}</span>
             </button>
           );
         })}
       </div>
-    </nav>
+      </LiquidGlass>
+    </div>
   );
 }

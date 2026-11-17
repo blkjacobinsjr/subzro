@@ -1,0 +1,29 @@
+.home-motion-word,
+.home-motion-scroll-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.home-motion-reveal:focus-within,
+.home-motion-reveal:focus-within > .home-motion-item {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.home-motion-tilt {
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-motion-reveal,
+  .home-motion-item,
+  .home-motion-word,
+  .home-motion-scroll-word,
+  .home-motion-tilt,
+  .home-motion-artwork {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

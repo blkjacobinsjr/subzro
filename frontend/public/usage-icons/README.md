@@ -1,0 +1,9 @@
+Subzro usage meter
+
+Generated with the built-in imagegen tool on 2026-11-09. The original PNG and 160px WebP derivative are retained as source assets from the first exploration. The current UI styles the actual rating digits in UsageRating.css and does not render this meter icon.
+
+Meaning: this is a decorative usage-frequency icon. The adjacent number is the existing average of recorded usage scores, on a 1 to 5 scale. It is not a saving, risk, or cancellation recommendation. Missing or invalid ratings stay hidden. Valid ratings display one decimal at most.
+
+Final prompt:
+
+Use case: stylized-concept. Asset type: Subzro subscription usage rating icon, displayed at 36 CSS pixels next to Usage 3/5. Primary request: a highly detailed miniature 3D isometric usage meter, inspired by Dieter Rams Braun industrial design and Airbnb 2024 tactile emoji icon language. Subject: one compact rounded ceramic ivory analog activity gauge, brushed aluminum rim, a simple five-segment arc in muted lavender through mint, one short lavender needle, tiny mint power indicator, gentle frosted blue accent evoking Subzro's cold-nose savings brand. The meter measures how frequently a subscription is used, not money or risk. No letters, numbers, logos, badges, sparkles or extra props. Three-quarter front-left view with slight top-down angle. Crisp chunky readable silhouette, semi-matte plastic, satin ceramic, realistic material depth, soft handcrafted realism; no outlines. Soft neutral top-left studio light, gentle gloss edge highlights, minimal self-shadow, no cast drop shadow. Premium charming utilitarian lifestyle emoji. One central dominant object on a 1:1 canvas, comfortable 10% margins, fills canvas well, isolated genuinely transparent alpha background for use on pale lavender and dark navy UI. No white rectangle, noise, floor, text or watermark.

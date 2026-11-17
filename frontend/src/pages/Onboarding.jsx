@@ -11,7 +11,13 @@ import {
 } from "../utils/onboardingState";
 import useAppHaptics from "../hooks/useAppHaptics";
 
-const TOTAL_STEPS = 12;
+import { useDataContext } from "../contexts/dataContext";
+import BulkImport from "./BulkImport";
+import Piechartwithneedle from "../components/charts/Piechartwithneedle";
+import UsageRadarChart from "../components/charts/UsageRadarChart";
+import HighestSpendOrbit from "../components/charts/HighestSpendOrbit";
+
+const TOTAL_STEPS = 14;
 const PAYOFF_CARD_COUNT = 4;
 const ENTER_EASE = [0.22, 1, 0.36, 1];
 const LOGO_DEV_TOKEN = "pk_fg7nZQ2oQQK-tZnjxKWfPQ";
@@ -36,7 +42,9 @@ const STEP_BACKGROUNDS = [
   "from-[#24405f] via-[#395d86] to-[#5a88b1]", // 8
   "from-[#294565] via-[#3d6089] to-[#587fa8]", // 9
   "from-[#2f4c6d] via-[#446892] to-[#628bb3]", // 10
-  "from-[#deeffc] via-[#edf7ff] to-[#f6fbff]", // 11
+  "from-[#35587d] via-[#4d739e] to-[#6c98c4]", // 11
+  "from-[#3b608a] via-[#577ea5] to-[#76a0ce]", // 12
+  "from-[#deeffc] via-[#edf7ff] to-[#f6fbff]", // 13
 ];
 const EVIDENCE_STEPS = [
   {
@@ -281,6 +289,7 @@ function AnimatedCurrency({
 }
 
 export default function Onboarding() {
+  const { subscriptions, dashboardData } = useDataContext();
   const haptics = useAppHaptics();
   const { user } = useUser();
   const navigate = useNavigate();
@@ -317,7 +326,7 @@ export default function Onboarding() {
 
   const userEmail = user?.primaryEmailAddress?.emailAddress || "";
   const isAdminUser = isAdminEmail(userEmail);
-  const isDarkStep = step <= 8;
+  const isDarkStep = step <= 8 || step === 11 || step === 12;
 
   const monthlyExposure = subscriptionCount * averagePrice;
   const yearlyExposure = monthlyExposure * 12;
@@ -629,12 +638,12 @@ export default function Onboarding() {
     // Positions: edge-anchored like Spark's colored blobs forming a star opening
     // Each logo sits at a viewport edge, partially off-screen
     const positions = [
-      { top: '-6%', left: '-8%' },  // top-left
-      { top: '-6%', right: '-8%' },  // top-right
-      { top: '28%', left: '-12%' },  // mid-left
-      { top: '28%', right: '-12%' },  // mid-right
-      { bottom: '-4%', left: '-8%' }, // bottom-left
-      { bottom: '-4%', right: '-8%' }, // bottom-right
+      { top: 'var(--splash-top, -6%)', left: 'var(--splash-side, -8%)' },  // top-left
+      { top: 'var(--splash-top, -6%)', right: 'var(--splash-side, -8%)' },  // top-right
+      { top: '28%', left: 'var(--splash-middle-side, -12%)' },  // mid-left
+      { top: '28%', right: 'var(--splash-middle-side, -12%)' },  // mid-right
+      { bottom: 'var(--splash-bottom, -4%)', left: 'var(--splash-side, -8%)' }, // bottom-left
+      { bottom: 'var(--splash-bottom, -4%)', right: 'var(--splash-side, -8%)' }, // bottom-right
     ];
 
     return (
@@ -665,8 +674,8 @@ export default function Onboarding() {
             100% { opacity: 1; transform: translateY(0); filter: blur(0); }
           }
           @keyframes splashBtnIn {
-            0%   { opacity: 0; transform: translateY(24px) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0%   { opacity: 0; transform: translate(-50%, 24px) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
           }
           @keyframes splashColorShift {
             0%,100% { color: #e5f4ff; }
@@ -691,6 +700,14 @@ export default function Onboarding() {
             width: 100%; height: 100%;
             object-fit: cover;
             border-radius: 48px;
+          }
+          @media (min-width: 1024px) {
+            .splash-blob {
+              --splash-side: ${LOGO_SIZE * -0.25}px;
+              --splash-middle-side: ${LOGO_SIZE * -0.25}px;
+              --splash-top: ${LOGO_SIZE * -0.15}px;
+              --splash-bottom: ${LOGO_SIZE * -0.15}px;
+            }
           }
         `}</style>
 
@@ -846,7 +863,7 @@ export default function Onboarding() {
           <button
             type="button"
             onClick={nextStep}
-            className="rounded-full bg-white px-8 py-3 text-sm font-bold text-[#10223e] shadow-xl transition hover:scale-105 active:scale-95"
+            className="btn-press tap-target-44 interactive-hover-filter interactive-hover-shadow rounded-full bg-white px-8 py-3 text-sm font-bold text-[#10223e] shadow-xl [--hover-filter:brightness(1.03)] [--hover-shadow:0_24px_40px_-20px_rgba(16,34,62,0.45)]"
           >
             Let's begin
           </button>
@@ -1391,11 +1408,53 @@ export default function Onboarding() {
           </button>
           <button
             type="button"
-            onClick={revealPayoffStep}
+            onClick={nextStep}
             className={`rounded-full px-6 py-2 text-sm font-medium text-white ${priceInteracted ? "bg-black" : "animate-pulse bg-black/85"
               }`}
           >
-            Reveal payoff
+            Continue
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  function renderBulkImportStep(mode) {
+    return (
+      <div className="flex h-full flex-col">
+        <h2 className="text-3xl font-extrabold tracking-tight text-white">
+          {mode === "upload" ? "Financial reset" : "Review subscriptions"}
+        </h2>
+        <p className="mt-1 text-sm text-[#cde7ff] max-w-[90%]">
+          {mode === "upload" ? "Upload a statement. We instantly extract and analyze." : "Verify identified charges. Keep or cancel them."}
+        </p>
+
+        <div className="mt-4 flex-1 overflow-auto rounded-2xl border border-white/15 bg-white/10 p-2 shadow-xl shadow-black/30 backdrop-blur">
+          <BulkImport
+            embedded
+            mode={mode}
+            redirectOnComplete={false}
+            deferCompleteUntilReview
+            hideDataControls={true}
+            onProcessingComplete={() => mode === "upload" && setStep(12)}
+            onComplete={revealPayoffStep}
+          />
+        </div>
+
+        <div className="mt-auto flex items-center justify-between pt-6">
+          <button
+            type="button"
+            onClick={mode === "upload" ? previousStep : () => setStep(11)}
+            className="rounded-full border border-white/35 bg-white/10 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/20"
+          >
+            Back
+          </button>
+          <button
+            type="button"
+            onClick={revealPayoffStep}
+            className="rounded-full bg-white/20 px-6 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/30"
+          >
+            {mode === "upload" ? "Skip for now" : "Skip review"}
           </button>
         </div>
       </div>
@@ -1508,24 +1567,82 @@ export default function Onboarding() {
               ))}
             </div>
 
-            <div className="mt-3 rounded-xl border border-black/10 bg-white/80 p-3">
-              <div className="mb-2 flex items-center justify-between">
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-black/50">
-                  Profile strength
-                </p>
-                <p className="font-mono text-sm font-semibold text-black/80">{profileStrength}/100</p>
-              </div>
-              <motion.div className="h-2 rounded-full bg-black/10">
-                <motion.div
-                  className="h-2 rounded-full bg-gradient-to-r from-[#2fd281] via-[#57dfaf] to-[#89edca]"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${profileStrength}%` }}
-                  transition={{ duration: 0.42, ease: ENTER_EASE }}
-                />
-              </motion.div>
-            </div>
+            <div className="mt-6">
+              <p className="text-center text-xs font-semibold uppercase tracking-wider text-black/45 mb-4">
+                Your full dashboard is ready
+              </p>
+              <div className="relative overflow-hidden rounded-3xl bg-white/30 border border-white/60 shadow-lg" style={{ height: "420px" }}>
+                <div className="flex flex-col gap-3 p-4 filter blur-md opacity-60 pointer-events-none select-none mix-blend-multiply">
 
-            <p className="mt-3 text-xs text-black/55">getting your subscriptions to subzro.</p>
+                  <div className="rounded-xl border border-black/10 bg-white p-3">
+                    <div className="mb-2 flex items-center justify-between">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-black/60">
+                        Profile strength
+                      </p>
+                      <p className="font-mono text-sm font-semibold text-black/80">{profileStrength}/100</p>
+                    </div>
+                    <div className="h-2 rounded-full bg-black/10">
+                      <div
+                        className="h-2 rounded-full bg-gradient-to-r from-[#2fd281] via-[#57dfaf] to-[#89edca]"
+                        style={{ width: `${profileStrength}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
+                      <p className="text-[9px] font-semibold text-slate-800">Spend-O-Meter</p>
+                      <div className="h-[80px] w-full mt-1">
+                        <Piechartwithneedle maxFirstSegment={200} needleValue={dashboardData?.totalCostPerMonth || averagePrice * subscriptionCount} compact />
+                      </div>
+                    </div>
+                    <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
+                      <p className="text-[9px] font-semibold text-slate-800">Category Usage vs. Cost</p>
+                      <div className="h-[80px] w-full mt-1 overflow-hidden flex items-center justify-center">
+                        <UsageRadarChart compact />
+                      </div>
+                    </div>
+                    <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
+                      <p className="text-[9px] font-semibold text-slate-800">Highest Spend</p>
+                      <div className="h-[80px] w-full mt-1 overflow-hidden flex items-center justify-center">
+                        <HighestSpendOrbit variant="preview" data={subscriptions?.length ? subscriptions.slice(0, 5).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
+                      </div>
+                    </div>
+                    <div className="rounded-xl bg-white/50 p-2 flex flex-col items-stretch justify-center gap-1.5">
+                      <p className="text-[9px] font-semibold text-slate-800 mb-0.5 text-center">All Subscriptions</p>
+                      {[
+                        { name: "Netflix", color: "bg-red-500", w: "w-full" },
+                        { name: "Spotify", color: "bg-green-500", w: "w-[75%]" },
+                        { name: "Amazon", color: "bg-blue-500", w: "w-[50%]" },
+                      ].map((mock, i) => (
+                        <div key={i} className="flex justify-between items-center text-[7px] font-bold text-slate-800">
+                          <div className="flex gap-1 items-center flex-1">
+                            <div className={`h-1.5 w-1.5 rounded-sm ${mock.color}`}></div>
+                            <span>{mock.name}</span>
+                          </div>
+                          <div className="w-8 h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div className={`h-full ${mock.color} ${mock.w}`}></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-[#f6fbff] via-transparent to-transparent">
+                  <div className="mt-auto mb-6 p-4 text-center w-full max-w-[240px] transition hover:scale-105" onClick={continueToCheckout} style={{ cursor: "pointer" }}>
+                    <div className="inline-flex items-center justify-center rounded-full bg-black/5 px-3 py-1 mb-2 backdrop-blur-sm">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#112a46]">Scan Complete</span>
+                    </div>
+                    <p className="text-xl font-extrabold text-[#112a46] mb-2 drop-shadow-sm">Results Locked</p>
+                    <p className="text-[11px] font-medium text-[#2c4e70] mb-4 leading-relaxed drop-shadow-sm">We've generated your custom dashboards. Continue to reveal them.</p>
+                    <button type="button" className="w-full rounded-full bg-gradient-to-r from-[#173759] to-[#2b63a4] hover:from-[#112a46] hover:to-[#173759] py-3.5 text-[13px] font-bold text-white shadow-[0_6px_20px_rgba(23,55,89,0.3)] transition-all">
+                      Reveal Everything
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
 
@@ -1585,6 +1702,8 @@ export default function Onboarding() {
     if (step === 8) return renderEvidenceStep(1);
     if (step === 9) return renderCountStep();
     if (step === 10) return renderPriceStep();
+    if (step === 11) return renderBulkImportStep("upload");
+    if (step === 12) return renderBulkImportStep("review");
     return renderPayoffStep();
   }
 

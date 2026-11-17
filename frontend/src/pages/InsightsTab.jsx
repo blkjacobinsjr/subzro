@@ -10,6 +10,10 @@ import CategoryPieChart from "../components/charts/CategoryPieChart";
 import Piechartwithneedle from "../components/charts/Piechartwithneedle";
 import WealthBuilderCard from "../components/WealthBuilderCard";
 import eventEmitter from "../utils/EventEmitter";
+import { rankSubscriptionsByMonthlyPrice } from "../utils/dashboardHeroModel";
+
+const METRIC_CARD_CLASS =
+  "rounded-xl bg-white/40 p-4 backdrop-blur-sm interactive-hover-raise interactive-hover-bg [--hover-bg:rgba(255,255,255,0.6)] dark:bg-white/10 dark:[--hover-bg:rgba(255,255,255,0.15)]";
 
 export default function InsightsTab() {
   const { subscriptions, usedCategories, dashboardData } = useDataContext();
@@ -83,7 +87,7 @@ export default function InsightsTab() {
       {enableControlHero && (
         <div className="px-1">
           <p
-            className="max-w-[15ch] text-[1.7rem] leading-[1.06] tracking-[-0.04em] text-slate-800/90"
+            className="max-w-[15ch] text-[1.7rem] leading-[1.06] tracking-[-0.04em] text-slate-800/90 dark:text-[#d8cca4]/88"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Keep what earns its place. Question the rest.
@@ -92,7 +96,7 @@ export default function InsightsTab() {
       )}
 
       {/* Usage Quiz Card (Original - Frequency-based) */}
-      <div className="rounded-[28px] border border-white/70 bg-[linear-gradient(160deg,rgba(239,248,255,0.92)_0%,rgba(246,252,250,0.9)_100%)] p-5 shadow-[0_18px_40px_rgba(125,145,189,0.1)] backdrop-blur-xl dark:from-blue-900/20 dark:via-cyan-900/20 dark:to-teal-900/20">
+      <div className="rounded-[28px] border border-white/70 bg-[linear-gradient(160deg,rgba(239,248,255,0.92)_0%,rgba(246,252,250,0.9)_100%)] p-5 shadow-[0_18px_40px_rgba(125,145,189,0.1)] backdrop-blur-xl dark:border-white/10 dark:bg-[linear-gradient(160deg,rgba(23,38,72,0.82)_0%,rgba(12,29,60,0.88)_100%)] dark:shadow-[0_24px_48px_rgba(7,10,24,0.24)]">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-blue-800/60 dark:text-blue-200/60">
@@ -105,7 +109,7 @@ export default function InsightsTab() {
           <button
             onClick={() => eventEmitter.emit("openFrequencyQuiz")}
             disabled={totalCount === 0}
-            className="shrink-0 rounded-full bg-blue-900 px-4 py-2 text-xs font-medium text-white transition-all active:scale-95 disabled:opacity-50 dark:bg-blue-100 dark:text-blue-900"
+            className="btn-press tap-target-44 shrink-0 rounded-full bg-blue-900 px-4 py-2 text-xs font-medium text-white disabled:opacity-50 dark:border dark:border-blue-300/20 dark:bg-blue-400/10 dark:text-blue-100"
           >
             {unratedCount > 0 ? `Rate ${unratedCount}` : "Review"}
           </button>
@@ -129,7 +133,7 @@ export default function InsightsTab() {
       </div>
 
       {/* Joy Check Card (Ramit's Philosophy) */}
-      <div className="rounded-[28px] border border-white/70 bg-[linear-gradient(160deg,rgba(247,240,255,0.92)_0%,rgba(255,245,249,0.9)_100%)] p-5 shadow-[0_18px_40px_rgba(125,145,189,0.1)] backdrop-blur-xl dark:from-purple-900/20 dark:via-pink-900/20 dark:to-rose-900/20">
+      <div className="rounded-[28px] border border-white/70 bg-[linear-gradient(160deg,rgba(247,240,255,0.92)_0%,rgba(255,245,249,0.9)_100%)] p-5 shadow-[0_18px_40px_rgba(125,145,189,0.1)] backdrop-blur-xl dark:border-white/10 dark:bg-[linear-gradient(160deg,rgba(56,28,74,0.82)_0%,rgba(48,24,68,0.88)_100%)] dark:shadow-[0_24px_48px_rgba(7,10,24,0.24)]">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-purple-800/60 dark:text-purple-200/60">
@@ -142,7 +146,7 @@ export default function InsightsTab() {
           <button
             onClick={() => eventEmitter.emit("openUsageQuiz")}
             disabled={totalCount === 0}
-            className="shrink-0 rounded-full bg-purple-900 px-4 py-2 text-xs font-medium text-white transition-all active:scale-95 disabled:opacity-50 dark:bg-purple-100 dark:text-purple-900"
+            className="btn-press tap-target-44 shrink-0 rounded-full bg-purple-900 px-4 py-2 text-xs font-medium text-white disabled:opacity-50 dark:border dark:border-purple-300/20 dark:bg-purple-400/10 dark:text-purple-100"
           >
             {unratedCount > 0 ? `Check ${unratedCount}` : "Review"}
           </button>
@@ -293,7 +297,7 @@ export default function InsightsTab() {
 
       {/* Stats Grid - Row 1 */}
       <div className="grid grid-cols-2 gap-2" role="group" aria-label="Subscription statistics">
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Total Subscriptions
           </p>
@@ -301,7 +305,7 @@ export default function InsightsTab() {
             {totalCount}
           </p>
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Monthly Spend
           </p>
@@ -309,7 +313,7 @@ export default function InsightsTab() {
             €{dashboardData?.totalCostPerMonth?.toFixed(2) || "0.00"}
           </p>
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             You've Identified
           </p>
@@ -322,7 +326,7 @@ export default function InsightsTab() {
             </p>
           )}
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Barely Used, Expensive
           </p>
@@ -339,7 +343,7 @@ export default function InsightsTab() {
 
       {/* Stats Grid - Row 2 */}
       <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Most Used
           </p>
@@ -352,7 +356,7 @@ export default function InsightsTab() {
             </p>
           )}
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Least Used
           </p>
@@ -365,7 +369,7 @@ export default function InsightsTab() {
             </p>
           )}
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Most Expensive Category
           </p>
@@ -378,7 +382,7 @@ export default function InsightsTab() {
             </p>
           )}
         </div>
-        <div className="rounded-xl bg-white/40 p-4 backdrop-blur-sm transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-white/60 dark:bg-white/10 dark:hover:bg-white/15">
+        <div className={METRIC_CARD_CLASS}>
           <p className="text-xs font-medium text-black/50 dark:text-white/50">
             Least Expensive Category
           </p>
@@ -394,7 +398,7 @@ export default function InsightsTab() {
       </div>
 
       {/* Charts Grid - Side by Side View */}
-      <div className="grid grid-cols-2 gap-2 sm:gap-4">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
         {/* Spend-O-Meter */}
         <div className="rounded-2xl bg-white/40 p-5 backdrop-blur-sm dark:bg-white/10 min-w-0">
           <p className="text-center text-sm font-semibold text-black/80 dark:text-white/80">
@@ -418,7 +422,7 @@ export default function InsightsTab() {
               Category Usage vs. Cost
             </p>
             <p className="text-center text-xs text-black/40 dark:text-white/40">
-              Higher means more usage relative to cost
+              Cost is scaled to the top category; score is out of 5
             </p>
             <div className="mt-4 h-[250px] w-full">
               <UsageRadarChart />
@@ -436,7 +440,7 @@ export default function InsightsTab() {
               Highest Spend Overview
             </p>
             <div className="mt-2 w-full">
-              <HighestSpendOrbit data={subscriptions ? subscriptions.slice(0, 10).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
+              <HighestSpendOrbit data={rankSubscriptionsByMonthlyPrice(subscriptions)} />
             </div>
           </div>
         )}

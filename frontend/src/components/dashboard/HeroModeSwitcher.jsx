@@ -8,7 +8,8 @@ const MODE_META = {
   spend: {
     label: "Spend",
     icon: BanknotesIcon,
-    active: "bg-slate-950 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)]",
+    active:
+      "bg-slate-950 text-white shadow-[0_16px_30px_rgba(15,23,42,0.18)] dark:bg-white dark:text-slate-950",
   },
   recover: {
     label: "Recover",
@@ -26,7 +27,7 @@ const MODE_META = {
 
 export default function HeroModeSwitcher({ activeMode, onModeChange }) {
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-full border border-white/60 bg-white/50 p-1 shadow-[0_18px_40px_rgba(140,160,196,0.14)] backdrop-blur-xl">
+    <div className="inline-flex items-center gap-1.5 rounded-full border border-white/60 bg-white/50 p-1 shadow-[0_18px_40px_rgba(140,160,196,0.14)] backdrop-blur-xl dark:border-white/10 dark:bg-white/8 dark:shadow-[0_18px_36px_rgba(7,10,24,0.18)]">
       {Object.entries(MODE_META).map(([mode, meta]) => {
         const isActive = activeMode === mode;
         const Icon = meta.icon;
@@ -36,10 +37,10 @@ export default function HeroModeSwitcher({ activeMode, onModeChange }) {
             key={mode}
             type="button"
             onClick={() => onModeChange(mode)}
-            className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold transition-all duration-200 ${
+            className={`btn-press tap-target-44 inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold ${
               isActive
                 ? meta.active
-                : "bg-transparent text-slate-500 hover:bg-white/70 hover:text-slate-800"
+                : "interactive-hover-bg interactive-hover-color bg-transparent text-slate-500 [--hover-bg:rgba(255,255,255,0.7)] [--hover-color:rgba(30,41,59,1)] dark:text-white/46 dark:[--hover-bg:rgba(255,255,255,0.1)] dark:[--hover-color:rgba(255,255,255,0.82)]"
             }`}
           >
             <Icon className="h-3.5 w-3.5" />

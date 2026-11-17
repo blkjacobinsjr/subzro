@@ -1,7 +1,7 @@
 export const CONTROL_HERO_REFERENCE = 219;
 export const CONTROL_HERO_MODES = ["spend", "recover", "future"];
 
-function toMonthlyPrice(subscription) {
+export function toMonthlyPrice(subscription) {
   if (!subscription) return 0;
 
   if (typeof subscription.monthlyPrice === "number") {
@@ -10,6 +10,37 @@ function toMonthlyPrice(subscription) {
 
   const price = Number(subscription.price || 0);
   return subscription.interval === "year" ? price / 12 : price;
+}
+
+function getComparableMonthlyPrice(subscription) {
+  if (!subscription) return 0;
+
+  if (subscription.monthlyPrice !== undefined && subscription.monthlyPrice !== null) {
+    const monthlyPrice = Number(subscription.monthlyPrice);
+    if (Number.isFinite(monthlyPrice)) return Math.max(0, monthlyPrice);
+  }
+
+  const price = Number(subscription.price ?? 0);
+  if (!Number.isFinite(price)) return 0;
+  return Math.max(0, subscription.interval === "year" ? price / 12 : price);
+}
+
+export function rankSubscriptionsByMonthlyPrice(subscriptions, limit = 10) {
+  if (!Array.isArray(subscriptions)) return [];
+
+  const safeLimit = Number.isFinite(Number(limit))
+    ? Math.max(0, Math.trunc(Number(limit)))
+    : 10;
+
+  return subscriptions
+    .map((subscription, index) => ({
+      subscription,
+      index,
+      value: getComparableMonthlyPrice(subscription),
+    }))
+    .sort((a, b) => b.value - a.value || a.index - b.index)
+    .slice(0, safeLimit)
+    .map(({ subscription, value }) => ({ ...subscription, value }));
 }
 
 function calculateFutureValue(monthlyAmount, years = 10, annualRate = 0.08) {
@@ -47,9 +78,9 @@ function getActionForMode({
 }) {
   if (!totalSubscriptions) {
     return {
-      type: "add",
-      label: "Add subscription",
-      helper: "Give the dashboard something to control.",
+      type: "reset",
+      label: "Financial reset",
+      helper: "Upload a statement to instantly find subscriptions.",
     };
   }
 
@@ -73,7 +104,7 @@ function getActionForMode({
     return {
       type: "alerts",
       label: `Review ${notificationsCount} alerts`,
-      helper: "There are unresolved subscription signals waiting.",
+      helper: "Unresolved subscription signals need review.",
     };
   }
 
@@ -93,17 +124,7 @@ function getActionForMode({
 }
 
 export function getInitialControlHeroMode(search = "") {
-  if (!search) return "recover";
-
-  const params = new URLSearchParams(search);
-  const fromOnboarding = params.get("from") === "onboarding";
-  const checkoutSuccess = params.get("checkout") === "success";
-
-  if (fromOnboarding && checkoutSuccess) {
-    return "recover";
-  }
-
-  return "recover";
+  return "spend";
 }
 
 export function createDashboardHeroModel({
@@ -140,11 +161,11 @@ export function createDashboardHeroModel({
   const biggestLeak =
     dashboardData?.barelyUsedMostExpensive?.name
       ? {
-          ...dashboardData.barelyUsedMostExpensive,
-          monthlyPrice:
-            Number(dashboardData.barelyUsedMostExpensive.monthlyPrice) ||
-            toMonthlyPrice(dashboardData.barelyUsedMostExpensive),
-        }
+        ...dashboardData.barelyUsedMostExpensive,
+        monthlyPrice:
+          Number(dashboardData.barelyUsedMostExpensive.monthlyPrice) ||
+          toMonthlyPrice(dashboardData.barelyUsedMostExpensive),
+      }
       : sortedByMonthly[0] || null;
 
   const mostUsed =
@@ -172,28 +193,28 @@ export function createDashboardHeroModel({
   const orbitBadges = [
     biggestLeak?.name
       ? {
-          key: "leak",
-          label: getCompactLabel(biggestLeak.name),
-          value: biggestLeak.monthlyPrice || toMonthlyPrice(biggestLeak),
-          tone: "slate",
-        }
+        key: "leak",
+        label: getCompactLabel(biggestLeak.name),
+        value: biggestLeak.monthlyPrice || toMonthlyPrice(biggestLeak),
+        tone: "slate",
+      }
       : null,
     mostUsed?.name
       ? {
-          key: "most",
-          label: getCompactLabel(mostUsed.name),
-          value: toMonthlyPrice(mostUsed),
-          tone: "sky",
-        }
+        key: "most",
+        label: getCompactLabel(mostUsed.name),
+        value: toMonthlyPrice(mostUsed),
+        tone: "sky",
+      }
       : null,
     futureValue10y > 0
       ? {
-          key: "future",
-          label: "10Y",
-          value: Math.round(futureValue10y / 1000),
-          suffix: "k",
-          tone: "emerald",
-        }
+        key: "future",
+        label: "10Y",
+        value: Math.round(futureValue10y / 1000),
+        suffix: "k",
+        tone: "emerald",
+      }
       : null,
   ].filter(Boolean);
 
@@ -202,20 +223,20 @@ export function createDashboardHeroModel({
       id: "spend",
       eyebrow: "Monthly spend",
       value: monthlySpend,
-      valuePrefix: "EUR ",
+      valuePrefix: "€",
       detail: yearlySpend
-        ? `Yearly exposure EUR ${yearlySpend.toLocaleString()}`
+        ? `Yearly exposure €${yearlySpend.toLocaleString()}`
         : "Track every recurring cost",
       helper: "See the quiet outflow clearly.",
       takeaway: biggestLeak?.name
-        ? `${biggestLeak.name} is the heaviest recurring drag.`
+        ? `${biggestLeak.name} is the main drag.`
         : "No dominant leak yet. Add more data.",
       supportingNote: monthlySpend
         ? spendGap > 0
-          ? `You are EUR ${Math.abs(spendGap).toLocaleString()} above the current reference line.`
+          ? `You are €${Math.abs(spendGap).toLocaleString()} above the current reference line.`
           : spendGap < 0
-          ? `You are EUR ${Math.abs(spendGap).toLocaleString()} below the current reference line.`
-          : "You are sitting exactly on the current reference line."
+            ? `You are €${Math.abs(spendGap).toLocaleString()} below the current reference line.`
+            : "You are sitting exactly on the current reference line."
         : "The reference line becomes useful once spend data lands.",
       action: getActionForMode({
         totalSubscriptions,
@@ -229,13 +250,13 @@ export function createDashboardHeroModel({
       id: "recover",
       eyebrow: "Potential to reclaim",
       value: recoverableMonthly,
-      valuePrefix: "EUR ",
+      valuePrefix: "€",
       detail: recoverableYearly
-        ? `EUR ${recoverableYearly.toLocaleString()} per year`
-        : "Find the cleanest immediate win",
+        ? `€${recoverableYearly.toLocaleString()} per year`
+        : "Find the cleanest leak",
       helper: "Start where the money comes back fastest.",
       takeaway: biggestLeak?.name
-        ? `${biggestLeak.name} is the clearest leak to question next.`
+        ? `${biggestLeak.name} is the leak.`
         : "Joy and usage checks reveal the strongest recoverable win.",
       supportingNote: recoverableMonthly
         ? `${recoverableRatio}% of current monthly spend looks recoverable right now.`
@@ -252,9 +273,9 @@ export function createDashboardHeroModel({
       id: "future",
       eyebrow: "Future value in 10 years",
       value: futureValue10y,
-      valuePrefix: "EUR ",
+      valuePrefix: "€",
       detail: recoverableMonthly
-        ? `From EUR ${Math.round(recoverableMonthly).toLocaleString()} redirected each month`
+        ? `From €${Math.round(recoverableMonthly).toLocaleString()} redirected each month`
         : "No savings stream yet",
       helper: "Keep the long horizon attached to the small cut.",
       takeaway: recoverableMonthly
