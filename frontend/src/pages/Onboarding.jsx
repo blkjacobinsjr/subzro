@@ -638,12 +638,12 @@ export default function Onboarding() {
     // Positions: edge-anchored like Spark's colored blobs forming a star opening
     // Each logo sits at a viewport edge, partially off-screen
     const positions = [
-      { top: '-6%', left: '-8%' },  // top-left
-      { top: '-6%', right: '-8%' },  // top-right
-      { top: '28%', left: '-12%' },  // mid-left
-      { top: '28%', right: '-12%' },  // mid-right
-      { bottom: '-4%', left: '-8%' }, // bottom-left
-      { bottom: '-4%', right: '-8%' }, // bottom-right
+      { top: 'var(--splash-top, -6%)', left: 'var(--splash-side, -8%)' },  // top-left
+      { top: 'var(--splash-top, -6%)', right: 'var(--splash-side, -8%)' },  // top-right
+      { top: '28%', left: 'var(--splash-middle-side, -12%)' },  // mid-left
+      { top: '28%', right: 'var(--splash-middle-side, -12%)' },  // mid-right
+      { bottom: 'var(--splash-bottom, -4%)', left: 'var(--splash-side, -8%)' }, // bottom-left
+      { bottom: 'var(--splash-bottom, -4%)', right: 'var(--splash-side, -8%)' }, // bottom-right
     ];
 
     return (
@@ -674,8 +674,8 @@ export default function Onboarding() {
             100% { opacity: 1; transform: translateY(0); filter: blur(0); }
           }
           @keyframes splashBtnIn {
-            0%   { opacity: 0; transform: translateY(24px) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0%   { opacity: 0; transform: translate(-50%, 24px) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
           }
           @keyframes splashColorShift {
             0%,100% { color: #e5f4ff; }
@@ -700,6 +700,14 @@ export default function Onboarding() {
             width: 100%; height: 100%;
             object-fit: cover;
             border-radius: 48px;
+          }
+          @media (min-width: 1024px) {
+            .splash-blob {
+              --splash-side: ${LOGO_SIZE * -0.25}px;
+              --splash-middle-side: ${LOGO_SIZE * -0.25}px;
+              --splash-top: ${LOGO_SIZE * -0.15}px;
+              --splash-bottom: ${LOGO_SIZE * -0.15}px;
+            }
           }
         `}</style>
 
@@ -1585,19 +1593,19 @@ export default function Onboarding() {
                     <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
                       <p className="text-[9px] font-semibold text-slate-800">Spend-O-Meter</p>
                       <div className="h-[80px] w-full mt-1">
-                        <Piechartwithneedle maxFirstSegment={200} needleValue={dashboardData?.totalCostPerMonth || averagePrice * subscriptionCount} />
+                        <Piechartwithneedle maxFirstSegment={200} needleValue={dashboardData?.totalCostPerMonth || averagePrice * subscriptionCount} compact />
                       </div>
                     </div>
                     <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
                       <p className="text-[9px] font-semibold text-slate-800">Category Usage vs. Cost</p>
                       <div className="h-[80px] w-full mt-1 overflow-hidden flex items-center justify-center">
-                        <UsageRadarChart />
+                        <UsageRadarChart compact />
                       </div>
                     </div>
                     <div className="rounded-xl bg-white/50 p-2 flex flex-col items-center">
                       <p className="text-[9px] font-semibold text-slate-800">Highest Spend</p>
                       <div className="h-[80px] w-full mt-1 overflow-hidden flex items-center justify-center">
-                        <HighestSpendOrbit data={subscriptions?.length ? subscriptions.slice(0, 5).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
+                        <HighestSpendOrbit variant="preview" data={subscriptions?.length ? subscriptions.slice(0, 5).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
                       </div>
                     </div>
                     <div className="rounded-xl bg-white/50 p-2 flex flex-col items-stretch justify-center gap-1.5">

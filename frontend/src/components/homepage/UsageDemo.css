@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Subzro Demo Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins/poppins-normal-400-core.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Subzro Demo Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/poppins/poppins-normal-500-core.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Subzro Demo Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/poppins/poppins-normal-600-core.woff2") format("woff2");
+}
+
 .usage-demo-shell {
   --demo-ink: #292630;
   --demo-muted: #716c7b;
@@ -32,6 +56,43 @@
   position: relative;
 }
 
+.usage-demo-device { position: relative; }
+.usage-demo-device__frame { display: none; }
+
+/* Monkr's measured screen cutout, relative to the visible laptop bounds. */
+@container usage-demo (min-width: 1040px) {
+  .usage-demo-device {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 1610 / 969;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+  .usage-demo-device__frame {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 119.2547%;
+    height: 128.7926%;
+    max-width: none;
+    left: -9.6273%;
+    top: -18.3695%;
+    pointer-events: none;
+  }
+  .usage-demo-device .usage-demo-shell__stage {
+    position: absolute;
+    z-index: 1;
+    left: 10.2484%;
+    top: 3.096%;
+    width: 79.5031%;
+    height: 85.8617%;
+    max-width: none;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  .usage-demo-device .usage-demo .ss-stage { border-radius: 0; }
+}
+
 .usage-demo__font-poster {
   display: grid;
   width: 100%;
@@ -39,7 +100,7 @@
   place-items: center;
   overflow: hidden;
   border-radius: 20px;
-  background: #eee9f6;
+  background: #eee9f6 url("/homepage-backgrounds/super-visuals/AI_Bg_011.webp") center / cover;
   color: #292630;
   font-family: system-ui, sans-serif;
 }
@@ -66,6 +127,7 @@
   display: block;
   width: 24px;
   height: 24px;
+  border-radius: var(--home-logo-radius, 24%);
   object-fit: contain;
 }
 
@@ -106,7 +168,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: #eee9f6;
+  background: #eee9f6 url("/homepage-backgrounds/super-visuals/AI_Bg_011.webp") center / cover;
 }
 
 .usage-demo__window {
@@ -120,7 +182,7 @@
 .usage-demo__app {
   min-height: 100%;
   background: #f7f4fa;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--usage-demo-font, "Subzro Demo Poppins", sans-serif);
 }
 
 .usage-demo__app-header {
@@ -146,6 +208,7 @@
   display: block;
   width: 24px;
   height: 24px;
+  border-radius: var(--home-logo-radius, 24%);
   object-fit: contain;
 }
 
@@ -181,7 +244,7 @@
 }
 
 .usage-demo__subscription-list {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--usage-demo-font, "Subzro Demo Poppins", sans-serif);
 }
 
 .usage-demo__subscription-row {
@@ -293,9 +356,9 @@
 }
 
 .usage-demo__choices {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -385,9 +448,9 @@
   opacity: 0.56;
 }
 
-@container usage-demo (width < 600px) {
+@container usage-demo (width < 816px) {
   .usage-demo-shell__stage {
-    height: min(640px, 178.77cqi);
+    height: min(516px, 144.134cqi);
     aspect-ratio: auto;
   }
 
@@ -409,14 +472,14 @@
 
   .usage-demo .ss-stage[data-layout="compact"] {
     border-radius: 20px;
-    background: #eee9f6;
+    background-color: #eee9f6;
   }
 
   .usage-demo .ss-stage[data-layout="compact"] > .usage-demo__app--compact {
     position: absolute;
     inset: 0 auto auto 0;
     width: 358px;
-    height: 640px;
+    height: 516px;
     overflow: hidden;
   }
 
@@ -463,12 +526,18 @@
   .usage-demo .ss-stage[data-layout="compact"] .usage-demo__scrim {
     inset: 0 auto auto 0;
     width: 358px;
-    height: 640px;
+    height: 516px;
     padding: 16px;
+    align-items: end;
   }
 
   .usage-demo .ss-stage[data-layout="compact"] .usage-demo__checkin-heading {
     gap: 8px;
+  }
+
+  .usage-demo .ss-stage[data-layout="compact"] .usage-demo__choices {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
 
   .usage-demo .ss-stage[data-layout="compact"] .usage-demo__question {

@@ -3,6 +3,8 @@ import CategoryIcon from "./CategoryIcon";
 import SubscriptionLogo from "./SubscriptionLogos";
 import eventEmitter from "../utils/EventEmitter";
 import useAppHaptics from "../hooks/useAppHaptics";
+import UsageRating from "./UsageRating";
+import { formatUsageRating } from "../utils/usageRating";
 
 const SWIPE_THRESHOLD = 100;
 const MAX_SWIPE_DISTANCE = 150;
@@ -16,6 +18,7 @@ export default function SubscriptionListCard({
   enableDelete = true,
 }) {
   const haptics = useAppHaptics();
+  const usageRating = formatUsageRating(subscription?.score, subscription?.validScore);
   const [swipeX, setSwipeX] = useState(0);
   const [isSwiping, setIsSwiping] = useState(false);
   const touchStartX = useRef(0);
@@ -119,7 +122,7 @@ export default function SubscriptionListCard({
 
   return (
     <div
-      className={`group interactive-hover-bg relative grid w-full min-w-0 cursor-pointer grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-xl border border-white/30 bg-white/40 p-3 backdrop-blur-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/50 [--hover-bg:rgba(255,255,255,0.6)] dark:border-white/10 dark:bg-white/10 dark:[--hover-bg:rgba(255,255,255,0.15)] ${className}`}
+      className={`group interactive-hover-bg relative grid w-full min-w-0 cursor-pointer grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-xl border border-white/30 bg-white/40 p-3 backdrop-blur-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/50 [--hover-bg:rgba(255,255,255,0.6)] dark:border-white/10 dark:bg-white/10 dark:[--hover-bg:rgba(255,255,255,0.15)] ${enableDelete ? "pr-14" : ""} ${className}`}
       key={subscription?._id}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
@@ -128,16 +131,18 @@ export default function SubscriptionListCard({
       onTouchEnd={handleTouchEnd}
       tabIndex={0}
       role="button"
-      aria-label={`${displayName}, €${subscription?.price} per ${subscription?.interval}`}
+      aria-label={`${displayName}, €${subscription?.price} per ${subscription?.interval}${usageRating === null ? "" : `, average usage ${usageRating} out of 5`}`}
       style={cardStyle}
     >
       {/* Subtle X button - top right, appears on hover/focus */}
       {enableDelete && (
         <button
+          type="button"
           onClick={handleDelete}
           aria-label={`Delete ${displayName}`}
-          className="btn-press tap-target-44 interactive-hover-bg interactive-hover-color absolute -right-3 -top-3 z-10 flex items-center justify-center rounded-full bg-black/10 text-black/50 opacity-0 backdrop-blur-sm focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50 group-hover:opacity-100 [--hover-bg:rgba(239,68,68,0.15)] [--hover-color:rgba(220,38,38,1)] dark:bg-white/10 dark:text-white/50 dark:[--hover-bg:rgba(239,68,68,0.2)] dark:[--hover-color:rgba(248,113,113,1)]"
+          className="btn-press pointer-events-none absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-black/50 opacity-0 transition-[opacity,transform] duration-150 hover:text-red-600 focus-visible:pointer-events-auto focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 [@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100 dark:text-white/50 dark:hover:text-red-400"
         >
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/5 dark:bg-white/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -149,6 +154,7 @@ export default function SubscriptionListCard({
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
+          </span>
         </button>
       )}
       <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/10 bg-white shadow-sm dark:border-white/20 dark:bg-white/90">
@@ -167,6 +173,7 @@ export default function SubscriptionListCard({
               </div>
             </div>
           )}
+          <UsageRating score={subscription?.score} valid={subscription?.validScore} />
         </div>
       </div>
       <div className="text-right">
@@ -177,12 +184,6 @@ export default function SubscriptionListCard({
               ? `${Math.round(subscription.price / 5)} ☕/mo`
               : `${Math.round(subscription.price / 5)} ☕/yr`}
           </p>
-          {subscription?.validScore && (
-            <div className="mt-1 flex items-center gap-2 text-xs text-black/50 dark:text-white/50 sm:absolute sm:inset-0 sm:mt-0 sm:min-w-[3rem] sm:-translate-x-16 sm:flex-col sm:items-center sm:justify-center sm:rounded sm:border sm:border-black/25 sm:p-1 sm:text-sm sm:shadow-inner dark:sm:border-white/20">
-              <div className="text-xs">Score</div>
-              <div>{subscription?.score.toFixed(2)}</div>
-            </div>
-          )}
         </div>
       </div>
     </div>

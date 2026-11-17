@@ -10,6 +10,7 @@ import CategoryPieChart from "../components/charts/CategoryPieChart";
 import Piechartwithneedle from "../components/charts/Piechartwithneedle";
 import WealthBuilderCard from "../components/WealthBuilderCard";
 import eventEmitter from "../utils/EventEmitter";
+import { rankSubscriptionsByMonthlyPrice } from "../utils/dashboardHeroModel";
 
 const METRIC_CARD_CLASS =
   "rounded-xl bg-white/40 p-4 backdrop-blur-sm interactive-hover-raise interactive-hover-bg [--hover-bg:rgba(255,255,255,0.6)] dark:bg-white/10 dark:[--hover-bg:rgba(255,255,255,0.15)]";
@@ -397,7 +398,7 @@ export default function InsightsTab() {
       </div>
 
       {/* Charts Grid - Side by Side View */}
-      <div className="grid grid-cols-2 gap-2 sm:gap-4">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
         {/* Spend-O-Meter */}
         <div className="rounded-2xl bg-white/40 p-5 backdrop-blur-sm dark:bg-white/10 min-w-0">
           <p className="text-center text-sm font-semibold text-black/80 dark:text-white/80">
@@ -421,7 +422,7 @@ export default function InsightsTab() {
               Category Usage vs. Cost
             </p>
             <p className="text-center text-xs text-black/40 dark:text-white/40">
-              Higher means more usage relative to cost
+              Cost is scaled to the top category; score is out of 5
             </p>
             <div className="mt-4 h-[250px] w-full">
               <UsageRadarChart />
@@ -439,7 +440,7 @@ export default function InsightsTab() {
               Highest Spend Overview
             </p>
             <div className="mt-2 w-full">
-              <HighestSpendOrbit data={subscriptions ? subscriptions.slice(0, 10).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
+              <HighestSpendOrbit data={rankSubscriptionsByMonthlyPrice(subscriptions)} />
             </div>
           </div>
         )}

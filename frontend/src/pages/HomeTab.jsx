@@ -12,6 +12,7 @@ import useAppHaptics from "../hooks/useAppHaptics";
 import {
   createDashboardHeroModel,
   getInitialControlHeroMode,
+  rankSubscriptionsByMonthlyPrice,
 } from "../utils/dashboardHeroModel";
 
 const SUMMARY_SURFACE_CLASS =
@@ -276,7 +277,7 @@ export default function HomeTab() {
               Highest Spend
             </p>
             <div className="mt-2 w-full flex-grow flex items-center justify-center">
-              <HighestSpendOrbit data={subscriptions ? subscriptions.slice(0, 10).map(s => ({ ...s, value: s.price || s.monthlyPrice || 0 })).sort((a, b) => b.value - a.value) : []} />
+              <HighestSpendOrbit data={rankSubscriptionsByMonthlyPrice(subscriptions)} />
             </div>
           </div>
         )}

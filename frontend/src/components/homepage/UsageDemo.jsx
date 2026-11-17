@@ -43,6 +43,7 @@ function usageStory(finishStory) {
     act.mark("choose-rarely");
     await act.click("usage-rarely");
     await act.set({ selectedUsage: 2 });
+    act.mark("usage-selected");
     await act.wait(1200);
 
     act.mark("save-usage");
@@ -117,7 +118,7 @@ function UsageScene({ paused, onComplete }) {
     <Stage
       width={960}
       height={620}
-      compact={{ below: 600, width: 358, height: 640 }}
+      compact={{ below: 816, width: 358, height: 516 }}
       initial={INITIAL}
       poster={POSTER}
       script={story}
@@ -126,14 +127,15 @@ function UsageScene({ paused, onComplete }) {
       cursor={{
         at: {
           wide: { x: 908, y: 480 },
-          compact: { x: 336, y: 610 },
+          compact: { x: 336, y: 486 },
         },
         idle: false,
       }}
       fidelity="realistic"
       accent="#7658a8"
       tokens={{
-        "--ss-font": '"Poppins", sans-serif',
+        "--ss-font": 'var(--usage-demo-font, "Subzro Demo Poppins", sans-serif)',
+        "--ss-canvas": "#eee9f6",
         "--ss-text": "#292630",
         "--ss-muted": "#716c7b",
         "--ss-surface": "#ffffff",
@@ -217,27 +219,39 @@ export default function UsageDemo() {
   const [run, setRun] = useState(0);
   const [paused, setPaused] = useState(false);
   const [complete, setComplete] = useState(false);
-  const [fontsReady, setFontsReady] = useState(false);
+  const [fontStatus, setFontStatus] = useState("loading");
+  const fontsReady = fontStatus !== "loading";
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     let active = true;
+    const settle = (status) => {
+      if (!active) return;
+      clearTimeout(timeout);
+      setFontStatus((current) => current === "loading" ? status : current);
+    };
+    const timeout = setTimeout(() => settle("fallback"), 4000);
     const prepareFonts = async () => {
       try {
-        await Promise.all([
-          document.fonts.load('400 14px "Poppins"', FONT_SAMPLE),
-          document.fonts.load('500 14px "Poppins"', FONT_SAMPLE),
-          document.fonts.load('600 20px "Poppins"', FONT_SAMPLE),
+        const faces = await Promise.all([
+          document.fonts.load('400 14px "Subzro Demo Poppins"', FONT_SAMPLE),
+          document.fonts.load('500 14px "Subzro Demo Poppins"', FONT_SAMPLE),
+          document.fonts.load('600 20px "Subzro Demo Poppins"', FONT_SAMPLE),
         ]);
+        if (faces.some((loaded) => loaded.length === 0)) {
+          settle("fallback");
+          return;
+        }
         await document.fonts.ready;
+        settle("loaded");
       } catch {
-        // Continue with the system fallback if the local font files fail.
+        settle("fallback");
       }
-      if (active) setFontsReady(true);
     };
     void prepareFonts();
     return () => {
       active = false;
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -258,7 +272,11 @@ export default function UsageDemo() {
   const handleComplete = useCallback(() => finishStory(), [finishStory]);
 
   return (
-    <div className="usage-demo-shell">
+    <div
+      className="usage-demo-shell"
+      data-font-status={fontStatus}
+      style={{ "--usage-demo-font": fontStatus === "fallback" ? "system-ui, sans-serif" : '"Subzro Demo Poppins", sans-serif' }}
+    >
       <div className="usage-demo-shell__caption">
         <span>Illustrative scene</span>
         <span aria-live="polite">
@@ -272,30 +290,41 @@ export default function UsageDemo() {
         </span>
       </div>
 
-      <div className="usage-demo-shell__stage" aria-hidden="true">
-        {fontsReady ? (
-          <UsageScene
-            key={run}
-            paused={paused}
-            onComplete={handleComplete}
-          />
-        ) : (
-          <div className="usage-demo__font-poster">
-            <div className="usage-demo__font-poster-card">
-              <div className="usage-demo__font-poster-brand">
-                <img src="/subzero_logo_icon.png" alt="" />
-                <span>Subzro</span>
-              </div>
-              <div className="usage-demo__font-poster-result">
-                <div>
-                  <strong>Disney Plus</strong>
-                  <span>Streaming</span>
+      <div className="usage-demo-device" aria-hidden="true">
+        <img
+          className="usage-demo-device__frame"
+          src="/device-frames/monkr/macbook-air-m2-midnight.webp"
+          alt=""
+          width={1920}
+          height={1248}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="usage-demo-shell__stage">
+          {fontsReady ? (
+            <UsageScene
+              key={run}
+              paused={paused}
+              onComplete={handleComplete}
+            />
+          ) : (
+            <div className="usage-demo__font-poster">
+              <div className="usage-demo__font-poster-card">
+                <div className="usage-demo__font-poster-brand">
+                  <img src="/subzero_logo_icon.png" alt="" />
+                  <span>Subzro</span>
                 </div>
-                <span>Rarely</span>
+                <div className="usage-demo__font-poster-result">
+                  <div>
+                    <strong>Disney Plus</strong>
+                    <span>Streaming</span>
+                  </div>
+                  <span>Rarely</span>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <p className="usage-demo-shell__description">

@@ -1,8 +1,9 @@
-import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { ShieldCheckIcon, SparklesIcon, StarIcon, BanknotesIcon } from '@heroicons/react/24/solid';
+import PublicNav from "../components/PublicNav";
 import Grainient from "../components/ui/Grainient";
 import { logOnboardingEvent } from "../utils/onboardingDebug";
 
@@ -177,7 +178,7 @@ export default function PricingPage() {
   ]);
 
   return (
-    <div className="relative min-h-[100dvh] bg-[#F4F6F9] overflow-x-hidden selection:bg-[#007AFF]/20 pb-[140px] flex flex-col items-center">
+    <div className="relative min-h-[100dvh] bg-[#F4F6F9] overflow-x-clip selection:bg-[#007AFF]/20 pb-[140px] flex flex-col items-center">
       <div className="fixed inset-0 pointer-events-none">
         <Grainient />
       </div>
@@ -188,35 +189,7 @@ export default function PricingPage() {
         <div className="absolute top-1/2 right-[-20%] h-80 w-80 rounded-full bg-[#42D587]/30 blur-[100px]" />
       </div>
 
-      <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-white/50 hidden md:block px-4">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/subzero_logo_icon.png" alt="Subzro" className="h-7 w-7" />
-            <span className="text-lg font-semibold text-black/80">subzro</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <SignedIn>
-              <Link to="/dashboard" className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white">
-                Dashboard
-              </Link>
-              <UserButton afterSignOutUrl={window.location.origin} />
-            </SignedIn>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main minimal mobile topbar for context returning */}
-      <div className="md:hidden flex h-14 px-6 items-center justify-between w-full z-40 relative mt-2">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/subzero_logo_icon.png" alt="Subzro" className="h-6 w-6" />
-          <span className="text-[17px] font-semibold tracking-tight text-black flex items-center gap-2">
-            subzro
-            <span className="inline-flex items-center gap-1 rounded bg-[#f4fbf7] border border-[#42D587]/20 px-1.5 py-0.5 text-[9px] uppercase tracking-widest font-bold text-[#2e945c] shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-              Matcha Plan
-            </span>
-          </span>
-        </Link>
-      </div>
+      <PublicNav checkout={autoCheckout || checkoutSource === "subzro_onboarding"} />
 
       <main className="mx-auto w-full max-w-[420px] px-4 pt-4 sm:pt-14 flex flex-col items-center animate-in fade-in duration-500">
         {/* Before & After Split Chart Card */}

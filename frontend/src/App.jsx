@@ -7,6 +7,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { Toaster } from "sonner";
+import "./components/Toaster.css";
 import DataProvider from "./contexts/dataContext";
 import ApiTest from "./pages/ApiTest";
 import Dashboard from "./pages/Dashboard";
@@ -159,7 +160,19 @@ function ClerkRouteProvider() {
       <Toaster
         richColors
         position="top-center"
-        toastOptions={{ duration: 2400 }}
+        className="subzro-toaster"
+        style={{ "--width": "min(420px, calc(100vw - 24px))" }}
+        offset={24}
+        mobileOffset={{
+          top: "calc(env(safe-area-inset-top, 0px) + 16px)",
+          right: 12,
+          bottom: 16,
+          left: 12,
+        }}
+        toastOptions={{
+          duration: 2400,
+          classNames: { toast: "subzro-toast-surface" },
+        }}
       />
     </ClerkProvider>
   );

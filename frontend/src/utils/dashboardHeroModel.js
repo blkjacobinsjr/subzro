@@ -1,7 +1,7 @@
 export const CONTROL_HERO_REFERENCE = 219;
 export const CONTROL_HERO_MODES = ["spend", "recover", "future"];
 
-function toMonthlyPrice(subscription) {
+export function toMonthlyPrice(subscription) {
   if (!subscription) return 0;
 
   if (typeof subscription.monthlyPrice === "number") {
@@ -10,6 +10,37 @@ function toMonthlyPrice(subscription) {
 
   const price = Number(subscription.price || 0);
   return subscription.interval === "year" ? price / 12 : price;
+}
+
+function getComparableMonthlyPrice(subscription) {
+  if (!subscription) return 0;
+
+  if (subscription.monthlyPrice !== undefined && subscription.monthlyPrice !== null) {
+    const monthlyPrice = Number(subscription.monthlyPrice);
+    if (Number.isFinite(monthlyPrice)) return Math.max(0, monthlyPrice);
+  }
+
+  const price = Number(subscription.price ?? 0);
+  if (!Number.isFinite(price)) return 0;
+  return Math.max(0, subscription.interval === "year" ? price / 12 : price);
+}
+
+export function rankSubscriptionsByMonthlyPrice(subscriptions, limit = 10) {
+  if (!Array.isArray(subscriptions)) return [];
+
+  const safeLimit = Number.isFinite(Number(limit))
+    ? Math.max(0, Math.trunc(Number(limit)))
+    : 10;
+
+  return subscriptions
+    .map((subscription, index) => ({
+      subscription,
+      index,
+      value: getComparableMonthlyPrice(subscription),
+    }))
+    .sort((a, b) => b.value - a.value || a.index - b.index)
+    .slice(0, safeLimit)
+    .map(({ subscription, value }) => ({ ...subscription, value }));
 }
 
 function calculateFutureValue(monthlyAmount, years = 10, annualRate = 0.08) {

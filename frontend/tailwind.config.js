@@ -22,6 +22,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "chart-label": "var(--chart-label)",
+        "chart-tooltip-background": "var(--chart-tooltip-background)",
+        "chart-tooltip-foreground": "var(--chart-tooltip-foreground)",
+        "chart-tooltip-muted": "var(--chart-tooltip-muted)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

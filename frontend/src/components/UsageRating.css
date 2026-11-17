@@ -1,0 +1,33 @@
+.usage-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  margin-top: 5px;
+  color: #51436f;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.usage-rating__label { color: #6c647b; font-size: 11px; }
+.usage-rating__value { display: inline-flex; align-items: baseline; gap: 5px; padding: 1px 4px 5px 0; font-variant-numeric: tabular-nums; }
+.usage-rating__number {
+  display: inline-block;
+  color: #8f74bf;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  text-shadow:
+    0 -1px 0 #faf7ff,
+    1px 1px 0 #8066ae,
+    2px 2px 0 #705496,
+    3px 3px 0 #5d4284,
+    3px 4px 0 #503570,
+    4px 5px 5px rgb(73 53 111 / 18%);
+}
+.usage-rating__scale { color: #6c647b; font-size: 10px; font-weight: 400; }
+.dark .usage-rating { color: #e4d8ff; }
+.dark .usage-rating__label, .dark .usage-rating__scale { color: #c4bdd3; }
+.dark .usage-rating__number { color: #d0bef5; text-shadow: 0 -1px 0 #f5eeff, 1px 1px 0 #a78bce, 2px 2px 0 #8e70b8, 3px 3px 0 #75549e, 3px 4px 0 #644589, 4px 5px 5px rgb(0 0 0 / 30%); }
